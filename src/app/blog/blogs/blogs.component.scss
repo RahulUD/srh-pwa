@@ -1,0 +1,23 @@
+
+.blogs {
+    border: 2px solid;
+    .blog-type {
+        text-align: center;
+        color: white;
+        padding: 4px;
+        font-size: 1.2em;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+
+    .blogs-container {
+        margin: 10px;
+    }
+    .see-all{
+        cursor: pointer;
+        &:hover{
+            color: green;
+            font-weight: bold;
+        }
+    }
+}

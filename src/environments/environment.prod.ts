@@ -1,3 +1,13 @@
+import { generateEndpoints } from "./endPoints";
+declare const require : any;
+
+// const baseUrl = 'http://139.59.35.248:8000/'
+const baseUrl = 'http://localhost:8000/'
+
 export const environment = {
-  production: true
+  production: false,
+  appVersion: require('../../package.json').version,
+  appEnvironment: 'PROD',
+  appName : 'checkMy Result',
+  endPoints: generateEndpoints(baseUrl),
 };

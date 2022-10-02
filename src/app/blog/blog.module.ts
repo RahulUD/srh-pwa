@@ -2,18 +2,24 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { BlogRoutingModule } from './blog-routing.module';
-import { HeaderComponent } from './header/header.component';
 import { BlogComponent } from './blog.component';
+import { SharedModule } from '../shared/shared.module';
+import { BlogsComponent } from './blogs/blogs.component';
+import { BlogitemComponent } from './blogitem/blogitem.component';
+import { ListComponent } from './list/list.component';
 
 
 @NgModule({
   declarations: [
-    HeaderComponent,
-    BlogComponent
+    BlogComponent,
+    BlogsComponent,
+    BlogitemComponent,
+    ListComponent
   ],
   imports: [
     CommonModule,
-    BlogRoutingModule
+    BlogRoutingModule,
+    SharedModule
   ]
 })
 export class BlogModule { }

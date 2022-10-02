@@ -1,0 +1,13 @@
+@import './../../../assets/scss/custom.scss';
+
+.blog-item {
+    display: flex;
+    cursor: pointer;
+
+    .blog-title {
+        &:hover {
+            color: $blue;
+            text-decoration: underline;
+        }
+    }
+}

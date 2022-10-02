@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+  jobs: any;
+  admitCards: any;
+  results: any;
+  constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.activatedRoute.data.subscribe(({ blogs }) => {
+      this.jobs = blogs.latestJob
+      this.admitCards = blogs.admitCard
+      this.results = blogs.result
+    });
   }
 
 }

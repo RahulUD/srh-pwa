@@ -1,0 +1,4 @@
+<div class="blog-item mb-2" [routerLink]="['/blogs/blogid/', blog._id]">
+    <i *ngFor="let icon of icons" class="bi" [ngClass]="icon" role="img" aria-label="blog"></i>
+    <div [ngClass]="textClass" class="blog-title ms-1"> {{blog.title}}</div>
+</div>

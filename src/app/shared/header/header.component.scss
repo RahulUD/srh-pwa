@@ -1,0 +1,17 @@
+@use '../../../../node_modules/bootstrap/scss/mixins' as *;
+.navbar-brand {
+    font-size: xx-large;
+}
+
+.navbar-nav>a {
+    font-size: large;
+}
+
+@media (max-width: 992px) { 
+    .navbar-brand {
+        font-size: large;
+    }
+    .navbar-nav>a {
+        font-size: medium;
+    }
+}

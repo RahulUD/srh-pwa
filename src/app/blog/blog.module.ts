@@ -9,6 +9,7 @@ import { BlogitemComponent } from './blogitem/blogitem.component';
 import { ListComponent } from './list/list.component';
 import { BlogdetailComponent } from './blogdetail/blogdetail.component';
 import { BlogshomeComponent } from './blogshome/blogshome.component';
+import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 
 
 @NgModule({
@@ -18,12 +19,14 @@ import { BlogshomeComponent } from './blogshome/blogshome.component';
     BlogitemComponent,
     ListComponent,
     BlogdetailComponent,
-    BlogshomeComponent
+    BlogshomeComponent,
+    
   ],
   imports: [
     CommonModule,
     BlogRoutingModule,
-    SharedModule
+    SharedModule,
+    MarkdownModule.forChild(),
   ]
 })
 export class BlogModule { }

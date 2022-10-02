@@ -26,11 +26,22 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/assets/scss/custom.scss",
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/prismjs/themes/prism-material-oceanic.css",
+              "./node_modules/katex/dist/katex.min.css"
             ],
             "scripts": [
               "./node_modules/@popperjs/core/dist/umd/popper.min.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+               "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "./node_modules/marked/marked.min.js",
+              "./node_modules/prismjs/prism.js",
+              "./node_modules/prismjs/components/prism-csharp.min.js",
+              "./node_modules/prismjs/components/prism-css.min.js",
+              "./node_modules/emoji-toolkit/lib/js/joypixels.min.js", 
+              "./node_modules/katex/dist/katex.min.js",
+              "./node_modules/katex/dist/contrib/auto-render.min.js",
+              "./node_modules/mermaid/dist/mermaid.min.js",
+              "./node_modules/clipboard/dist/clipboard.min.js"
             ]
           },
           "configurations": {

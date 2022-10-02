@@ -7,6 +7,8 @@ import { SharedModule } from '../shared/shared.module';
 import { BlogsComponent } from './blogs/blogs.component';
 import { BlogitemComponent } from './blogitem/blogitem.component';
 import { ListComponent } from './list/list.component';
+import { BlogdetailComponent } from './blogdetail/blogdetail.component';
+import { BlogshomeComponent } from './blogshome/blogshome.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { ListComponent } from './list/list.component';
     BlogComponent,
     BlogsComponent,
     BlogitemComponent,
-    ListComponent
+    ListComponent,
+    BlogdetailComponent,
+    BlogshomeComponent
   ],
   imports: [
     CommonModule,

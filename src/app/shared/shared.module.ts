@@ -5,13 +5,17 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { LogoComponent } from './logo/logo.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { DashboardheaderComponent } from './dashboardheader/dashboardheader.component';
+import { DashboardsidebarComponent } from './dashboardsidebar/dashboardsidebar.component';
 
 
 @NgModule({
   declarations: [
     LogoComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    DashboardheaderComponent,
+    DashboardsidebarComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +24,9 @@ import { FooterComponent } from './footer/footer.component';
   exports : [
     LogoComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    DashboardheaderComponent,
+    DashboardsidebarComponent
   ]
 })
 export class SharedModule { }

@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { PreloadAllModules } from '@angular/router';
 
 const routes: Routes = [
-  {path : '', loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)}
+  {path : '', loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)},
+  {path : 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)}
 ];
 
 @NgModule({

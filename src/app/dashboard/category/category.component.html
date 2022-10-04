@@ -6,7 +6,8 @@
             <th scope="col">Sub Category</th>
             <th scope="col">Sub Category - 2</th>
             <th scope="col">
-                <div class="d-grid gap-2"><button type="button" class="btn btn-primary btn-sm">Add +</button></div>
+                <div class="d-grid gap-2"><button type="button" class="btn btn-primary btn-sm"
+                        data-bs-target="#addCategory" data-bs-toggle="modal">Add +</button></div>
             </th>
         </tr>
     </thead>
@@ -52,3 +53,11 @@
         </tr>
     </tbody>
 </table>
+<app-model #newCategoty modelId = 'addCategory'>
+    <span modelTitle>this is title</span>
+    <div modelBody>this is body asd afg asdg ad</div>
+    <div class="modal-footer" modelFooter>
+        <button class="btn btn-primary" data-bs-target="#addCategory" data-bs-toggle="modal">Back to
+            first</button>
+    </div>
+</app-model>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModelComponent } from 'src/app/shared/model/model.component';
 
 @Component({
   selector: 'app-category',
@@ -11,5 +12,5 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
 }

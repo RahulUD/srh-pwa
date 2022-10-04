@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardheaderComponent } from './dashboardheader/dashboardheader.component';
 import { DashboardsidebarComponent } from './dashboardsidebar/dashboardsidebar.component';
+import { ModelComponent } from './model/model.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { DashboardsidebarComponent } from './dashboardsidebar/dashboardsidebar.c
     HeaderComponent,
     FooterComponent,
     DashboardheaderComponent,
-    DashboardsidebarComponent
+    DashboardsidebarComponent,
+    ModelComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ import { DashboardsidebarComponent } from './dashboardsidebar/dashboardsidebar.c
     HeaderComponent,
     FooterComponent,
     DashboardheaderComponent,
-    DashboardsidebarComponent
+    DashboardsidebarComponent,
+    ModelComponent
   ]
 })
 export class SharedModule { }

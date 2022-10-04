@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { MarkedOptions, MarkedRenderer } from 'ngx-markdown';
 import { SecurityContext } from '@angular/core';
+import { SharedModule } from './shared/shared.module';
 
 export function markedOptionsFactory(): MarkedOptions {
   const renderer = new MarkedRenderer();
@@ -31,6 +32,7 @@ export function markedOptionsFactory(): MarkedOptions {
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    SharedModule,
     MarkdownModule.forRoot({
       sanitize: SecurityContext.NONE,
       loader: HttpClient,

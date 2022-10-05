@@ -12,40 +12,14 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+        <tr *ngFor="let category of categories">
+            <td>{{category.title}}</td>
+            <td>{{category.cat1}}</td>
+            <td>{{category.cat2}}</td>
+            <td>{{category.cat3}}</td>
             <td>
                 <div class="d-flex justify-content-evenly">
-                    <i class="bi bi-trash-fill text-danger"></i>
-                    <i class="bi bi-pencil-square text-primary"></i>
-                    <i class="bi bi-clipboard"></i>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>Mark</td>
-            <td>
-                <div class="d-flex justify-content-evenly">
-                    <i class="bi bi-trash-fill text-danger"></i>
-                    <i class="bi bi-pencil-square text-primary"></i>
-                    <i class="bi bi-clipboard"></i>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>Larry the Bird</td>
-            <td>@twitter</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>
-                <div class="d-flex justify-content-evenly">
-                    <i class="bi bi-trash-fill text-danger"></i>
+                    <i class="bi bi-trash-fill text-danger" (click)="deleteCategory(category._id)"></i>
                     <i class="bi bi-pencil-square text-primary"></i>
                     <i class="bi bi-clipboard"></i>
                 </div>
@@ -53,11 +27,44 @@
         </tr>
     </tbody>
 </table>
-<app-model #newCategoty modelId = 'addCategory'>
-    <span modelTitle>this is title</span>
-    <div modelBody>this is body asd afg asdg ad</div>
+<app-model modelId='addCategory' modelClass="">
+    <span modelTitle>{{title}}</span>
+    <div modelBody>
+        <form [formGroup]="categotyForm">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Title</label>
+                <input type="email" formControlName="title" class="form-control" placeholder="Your title here ....">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                <textarea class="form-control" formControlName="description" placeholder="Your description here ..."
+                    rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Category</label>
+                <select class="form-select" aria-label="Default select example" formControlName="cat1">
+                    <option selected disabled>Select ..</option>
+                    <option [value]="cat.cat1" *ngFor="let cat of (categories1$ | async )">{{cat.cat1}}</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Sub Category</label>
+                <select class="form-select" aria-label="Default select example" formControlName="cat2">
+                    <option selected disabled>Select ..</option>
+                    <option [value]="cat.cat2" *ngFor="let cat of (categories2$ | async )">{{cat.cat2}}</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Sub Category 2</label>
+                <select class="form-select" aria-label="Default select example" formControlName="cat3">
+                    <option selected disabled>Select ..</option>
+                    <option [value]="cat.cat3" *ngFor="let cat of (categories3$ | async )">{{cat.cat3}}</option>
+                </select>
+            </div>
+        </form>
+    </div>
     <div class="modal-footer" modelFooter>
-        <button class="btn btn-primary" data-bs-target="#addCategory" data-bs-toggle="modal">Back to
+        <button class="btn btn-primary" (click)="saveCategory()" data-bs-target="#addCategory" data-bs-toggle="modal">Back to
             first</button>
     </div>
 </app-model>

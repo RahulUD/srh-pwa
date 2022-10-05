@@ -3,11 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { CategoryComponent } from './category/category.component';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardhomeComponent } from './dashboardhome/dashboardhome.component';
+import { CategoryResolver } from './resolver/category.resolver';
 
 const routes: Routes = [
   {path:'', component : DashboardComponent, children:[
     {path : '', component : DashboardhomeComponent},
-    {path : 'categories', component : CategoryComponent}
+    {path : 'categories', component : CategoryComponent, resolve: {
+      categiries: CategoryResolver,
+    },},
   ]}
 ];
 

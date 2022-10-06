@@ -1,0 +1,18 @@
+<div class="container">
+    <form [formGroup]="blogForm">
+        <div class="mb-3">
+            <input formControlName="title" type="text" class="form-control" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+            <textarea formControlName="description" class="form-control" rows="2"></textarea>
+        </div>
+        <div class="mb-3">
+            <textarea formControlName="markdown" class="form-control" rows="10"></textarea>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-primary me-md-2" type="button">Preview <i class="bi bi-eye"></i></button>
+            <button class="btn btn-danger me-md-2" type="button">Discard <i class="bi bi-x-circle"></i></button>
+            <button class="btn btn-success" type="button" (click)="save()">Save <i class="bi bi-hdd"></i></button>
+        </div>
+    </form>
+</div>

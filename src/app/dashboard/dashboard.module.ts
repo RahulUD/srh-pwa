@@ -7,13 +7,17 @@ import { SharedModule } from '../shared/shared.module';
 import { CategoryComponent } from './category/category.component';
 import { DashboardhomeComponent } from './dashboardhome/dashboardhome.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CreateBlogComponent } from './create-blog/create-blog.component';
+import { DashboardbloglistComponent } from './dashboardbloglist/dashboardbloglist.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
     CategoryComponent,
-    DashboardhomeComponent
+    DashboardhomeComponent,
+    CreateBlogComponent,
+    DashboardbloglistComponent
   ],
   imports: [
     CommonModule,

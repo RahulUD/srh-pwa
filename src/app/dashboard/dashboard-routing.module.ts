@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoryComponent } from './category/category.component';
+import { CreateBlogComponent } from './create-blog/create-blog.component';
 import { DashboardComponent } from './dashboard.component';
+import { DashboardbloglistComponent } from './dashboardbloglist/dashboardbloglist.component';
 import { DashboardhomeComponent } from './dashboardhome/dashboardhome.component';
+import { AllblogsResolver } from './resolver/allblogs.resolver';
 import { CategoryResolver } from './resolver/category.resolver';
 
 const routes: Routes = [
@@ -11,6 +14,10 @@ const routes: Routes = [
     {path : 'categories', component : CategoryComponent, resolve: {
       categiries: CategoryResolver,
     },},
+    {path : 'blogs/create', component : CreateBlogComponent},
+    {path : 'blogs/list', component : DashboardbloglistComponent, resolve : {
+      blogs: AllblogsResolver
+    }},
   ]}
 ];
 

@@ -23,6 +23,9 @@ export class BlogallResolver implements Resolve<boolean> {
     let latestJob = this.blogsService.getBlogs({
       params: { ...this.requestObj,type: 'latest-job' },
     });
-    return forkJoin({ result, admitCard, latestJob });
+    let hots = this.blogsService.getBlogs({
+      params: { ...this.requestObj,isHot: true },
+    });
+    return forkJoin({ result, admitCard, latestJob, hots });
   }
 }

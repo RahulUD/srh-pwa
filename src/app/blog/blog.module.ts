@@ -10,6 +10,8 @@ import { ListComponent } from './list/list.component';
 import { BlogdetailComponent } from './blogdetail/blogdetail.component';
 import { BlogshomeComponent } from './blogshome/blogshome.component';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
+import { MostclickedComponent } from './mostclicked/mostclicked.component';
+import { MostclickeditemComponent } from './mostclicked/mostclickeditem/mostclickeditem.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
     ListComponent,
     BlogdetailComponent,
     BlogshomeComponent,
+    MostclickedComponent,
+    MostclickeditemComponent,
     
   ],
   imports: [

@@ -11,6 +11,7 @@ export class BlogshomeComponent implements OnInit {
   jobs: any;
   admitCards: any;
   results: any;
+  hots: any
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -18,6 +19,7 @@ export class BlogshomeComponent implements OnInit {
       this.jobs = blogs.latestJob
       this.admitCards = blogs.admitCard
       this.results = blogs.result
+      this.hots = blogs.hots
     });
   }
 

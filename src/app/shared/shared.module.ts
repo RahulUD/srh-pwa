@@ -10,6 +10,7 @@ import { DashboardsidebarComponent } from './dashboardsidebar/dashboardsidebar.c
 import { ModelComponent } from './model/model.component';
 
 
+
 @NgModule({
   declarations: [
     LogoComponent,
@@ -17,7 +18,8 @@ import { ModelComponent } from './model/model.component';
     FooterComponent,
     DashboardheaderComponent,
     DashboardsidebarComponent,
-    ModelComponent
+    ModelComponent,
+
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,7 @@ import { ModelComponent } from './model/model.component';
     FooterComponent,
     DashboardheaderComponent,
     DashboardsidebarComponent,
-    ModelComponent
+    ModelComponent,
   ]
 })
 export class SharedModule { }

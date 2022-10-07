@@ -1,0 +1,6 @@
+export const redOrange = '#ff3f34'
+export const darkPeriwinkle = '#575fcf'
+export const freeBlue = '#3c40c6'
+export const vibrantYellow = '#ffd32a'
+export const bloackPearl = '#1e272e'
+export const spiro ='#0fbcf9'

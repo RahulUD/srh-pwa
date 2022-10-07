@@ -12,11 +12,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let category of categories">
+        <tr *ngFor="let category of categories" >
             <td>{{category.title}}</td>
             <td>{{category.cat1}}</td>
             <td>{{category.cat2}}</td>
-            <td>{{category.cat3}}</td>
+            <td>{{category._id}}</td>
             <td>
                 <div class="d-flex justify-content-evenly">
                     <i class="bi bi-trash-fill text-danger" (click)="deleteCategory(category._id)"></i>

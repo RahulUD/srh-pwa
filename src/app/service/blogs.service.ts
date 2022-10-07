@@ -20,4 +20,10 @@ export class BlogsService {
   save(formData: any){
     return this.http.post<baseBlog>(`${environment.endPoints.blogs}`, formData);
   }
+  getHot(){
+    return this.http.get<baseBlog[]>(`${environment.endPoints.blogs}/hotblog/get`);
+  }
+  toggleHot(id: string){
+    return this.http.get<baseBlog>(`${environment.endPoints.blogs}/hotblog/toggle/${id}`);
+  }
 }

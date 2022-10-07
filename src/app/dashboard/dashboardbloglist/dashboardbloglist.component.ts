@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { map, filter } from 'rxjs';
 import { BlogsService } from 'src/app/service/blogs.service';
+import { findAndUplateObjArr } from 'src/app/util/commonMethods';
 
 @Component({
   selector: 'app-dashboardbloglist',
@@ -13,7 +15,8 @@ export class DashboardbloglistComponent implements OnInit {
   blogs: any
 
   ngOnInit(): void {
-    this.activatedRoute.data.subscribe((res) => {
+    this.activatedRoute.data
+    .subscribe((res) => {
       this.blogs = res['blogs']
     });
   }
@@ -21,5 +24,11 @@ export class DashboardbloglistComponent implements OnInit {
     this.blogService
       .delete(id)
       .subscribe((res) => (this.blogs = res));
+  }
+  
+  toggleHot(id: string){
+    this.blogService
+    .toggleHot(id)
+    .subscribe((res) => (this.blogs = findAndUplateObjArr(this.blogs, res, '_id')));
   }
 }

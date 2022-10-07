@@ -8,6 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 import { DashboardheaderComponent } from './dashboardheader/dashboardheader.component';
 import { DashboardsidebarComponent } from './dashboardsidebar/dashboardsidebar.component';
 import { ModelComponent } from './model/model.component';
+import { ToasterComponent } from './toaster/toaster.component';
+import { ToastComponent } from './toast/toast.component';
 
 
 
@@ -19,6 +21,8 @@ import { ModelComponent } from './model/model.component';
     DashboardheaderComponent,
     DashboardsidebarComponent,
     ModelComponent,
+    ToasterComponent,
+    ToastComponent,
 
   ],
   imports: [
@@ -32,6 +36,7 @@ import { ModelComponent } from './model/model.component';
     DashboardheaderComponent,
     DashboardsidebarComponent,
     ModelComponent,
+    ToasterComponent
   ]
 })
 export class SharedModule { }

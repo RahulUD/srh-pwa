@@ -36,7 +36,7 @@ import { ToastComponent } from './toast/toast.component';
     DashboardheaderComponent,
     DashboardsidebarComponent,
     ModelComponent,
-    ToasterComponent
+    ToasterComponent,
   ]
 })
 export class SharedModule { }

@@ -10,6 +10,7 @@ import { DashboardsidebarComponent } from './dashboardsidebar/dashboardsidebar.c
 import { ModelComponent } from './model/model.component';
 import { ToasterComponent } from './toaster/toaster.component';
 import { ToastComponent } from './toast/toast.component';
+import { MarqueeComponent } from './marquee/marquee.component';
 
 
 
@@ -23,6 +24,7 @@ import { ToastComponent } from './toast/toast.component';
     ModelComponent,
     ToasterComponent,
     ToastComponent,
+    MarqueeComponent,
 
   ],
   imports: [
@@ -37,6 +39,7 @@ import { ToastComponent } from './toast/toast.component';
     DashboardsidebarComponent,
     ModelComponent,
     ToasterComponent,
+    MarqueeComponent
   ]
 })
 export class SharedModule { }

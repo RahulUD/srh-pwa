@@ -12,16 +12,16 @@ import { BlogsService } from 'src/app/service/blogs.service';
 })
 export class BlogallResolver implements Resolve<boolean> {
   constructor(private blogsService: BlogsService) {}
-  requestObj = {type: 'result', limit: 25, page: 1, fields : '_id,title,description'}
+  requestObj = {limit: 25, page: 1, fields : '_id,title,description'}
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
     let result = this.blogsService.getBlogs({
-      params: { ...this.requestObj,type: 'result' },
+      params: { ...this.requestObj,category: 'Results' },
     });
     let admitCard = this.blogsService.getBlogs({
-      params: { ...this.requestObj,type: 'admit-card' },
+      params: { ...this.requestObj,category: 'Admit Card' },
     });
     let latestJob = this.blogsService.getBlogs({
-      params: { ...this.requestObj,type: 'latest-job' },
+      params: { ...this.requestObj,category: 'Latest Jobs' },
     });
     let hots = this.blogsService.getBlogs({
       params: { ...this.requestObj,isHot: true },

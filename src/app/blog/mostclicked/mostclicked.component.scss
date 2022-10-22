@@ -1,5 +1,7 @@
+@import './../../../assets/scss/custom.scss';
 .most-clicked{
-    background-image: url('./../../../assets/img/jobs1.jpg');
+    // background-image: url('./../../../assets/img/jobs1.jpg');
+    background-image: linear-gradient($blue, white);
     background-repeat: no-repeat;
     background-size: cover
 }

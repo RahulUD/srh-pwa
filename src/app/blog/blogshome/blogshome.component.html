@@ -1,10 +1,20 @@
+<div class="bg-dark">
+    <app-marquee speed="slow" [stopOnHover]="true">
+        <ng-container *ngTemplateOutlet="marqueeContent"></ng-container>
+    </app-marquee>
+</div>
 <div class="container">
-    <div class="mt-2">
+   
+    <div class="my-2">
         <blog-mostclicked [blogs]="hots"></blog-mostclicked>
     </div>
 
+    <div class="mt-4 mb-2">
+       <app-sociallinks></app-sociallinks>
+    </div>
 
-    <div class="row g-3 ">
+
+    <div class="row g-3 mb-4">
         <div class="col-lg-4 col-md-6">
             <blogs icon="bi-briefcase-fill" groupTitle="Jobs" [blogs]="jobs"></blogs>
         </div>
@@ -16,3 +26,8 @@
         </div>
     </div>
 </div>
+<ng-template #marqueeContent>
+    <div>
+        <span *ngFor="let item of marqueeData" class="bg-light  py-1 badge text-primary m-1 marquee-item"><a [href]="item.url" target="_blank">{{item.title}}</a></span>
+    </div>
+</ng-template>

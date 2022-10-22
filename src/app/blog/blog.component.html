@@ -1,18 +1,7 @@
 <div class="sticky-top">
     <app-header></app-header>
-    <div class="bg-dark">
-        <app-marquee speed="slow" [stopOnHover]="true">
-            <ng-container *ngTemplateOutlet="marqueeContent"></ng-container>
-        </app-marquee>
-    </div>
-    
 </div>
 <router-outlet></router-outlet>
 <app-footer></app-footer>
 
 
-<ng-template #marqueeContent>
-    <div>
-        <span *ngFor="let item of marqueeData" class="bg-light  py-1 badge text-primary m-1 marquee-item"><a [href]="item.url" target="_blank">{{item.title}}</a></span>
-    </div>
-</ng-template>

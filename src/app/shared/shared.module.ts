@@ -11,6 +11,9 @@ import { ModelComponent } from './model/model.component';
 import { ToasterComponent } from './toaster/toaster.component';
 import { ToastComponent } from './toast/toast.component';
 import { MarqueeComponent } from './marquee/marquee.component';
+import { SociallinksComponent } from './sociallinks/sociallinks.component';
+import { SocialItemComponent } from './sociallinks/social-item/social-item.component';
+import { DialogueComponent } from './core/dialogue/dialogue.component';
 
 
 
@@ -25,6 +28,9 @@ import { MarqueeComponent } from './marquee/marquee.component';
     ToasterComponent,
     ToastComponent,
     MarqueeComponent,
+    SociallinksComponent,
+    SocialItemComponent,
+    DialogueComponent,
 
   ],
   imports: [
@@ -39,7 +45,8 @@ import { MarqueeComponent } from './marquee/marquee.component';
     DashboardsidebarComponent,
     ModelComponent,
     ToasterComponent,
-    MarqueeComponent
+    MarqueeComponent,
+    SociallinksComponent
   ]
 })
 export class SharedModule { }

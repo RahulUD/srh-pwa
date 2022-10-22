@@ -1,18 +1,37 @@
 <div class="container">
     <form [formGroup]="blogForm">
+        <ng-container *ngTemplateOutlet="butgroup"></ng-container>
         <div class="mb-3">
-            <input formControlName="title" type="text" class="form-control" placeholder="name@example.com">
+            <input  formControlName="title" type="text" class="form-control" placeholder="Title ....">
         </div>
         <div class="mb-3">
             <textarea formControlName="description" class="form-control" rows="2"></textarea>
         </div>
         <div class="mb-3">
-            <textarea formControlName="markdown" class="form-control" rows="10"></textarea>
+            <!-- <label for="exampleDataList" class="form-label">Datalist example</label> -->
+            <div class="d-flex">
+                <input formControlName="seo" (keydown)="addSeo($event)" class="form-control me-md-2" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                <select class="form-control" formControlName="category">
+                    <option value="" disabled>Choose category...</option>
+                    <option *ngFor="let blogType of blogTypes" [value]="blogType.title">{{blogType.title}}</option>
+                   
+                </select>
+            </div>
+            <div>
+                <span class="badge text-bg-primary py-1 px-2 mx-1 my-2" *ngFor="let item of seos; let i = index" >{{item}} &nbsp;<i class="bi bi-x-circle" (click)="discard(i)"></i></span>
+            </div>
         </div>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button class="btn btn-primary me-md-2" type="button">Preview <i class="bi bi-eye"></i></button>
-            <button class="btn btn-danger me-md-2" type="button">Discard <i class="bi bi-x-circle"></i></button>
-            <button class="btn btn-success" type="button" (click)="save()">Save <i class="bi bi-hdd"></i></button>
+        <div class="mb-3">
+            <textarea formControlName="markdown" class="form-control" rows="25"></textarea>
         </div>
+        <ng-container *ngTemplateOutlet="butgroup"></ng-container>
     </form>
 </div>
+
+<ng-template #butgroup>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end my-3">
+        <!-- <button class="btn btn-primary me-md-2" type="button">Preview <i class="bi bi-eye"></i></button> -->
+        <button (click)="discardBlog()" class="btn btn-danger me-md-2" type="button">Discard <i class="bi bi-x-circle"></i></button>
+        <button class="btn btn-success" type="button" (click)="save()">Save <i class="bi bi-hdd"></i></button>
+    </div>
+</ng-template>

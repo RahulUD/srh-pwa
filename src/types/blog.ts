@@ -1,3 +1,5 @@
+import { baseCategory } from "./category"
+
 export interface baseBlog {
     title: string,
     description : string,
@@ -5,5 +7,6 @@ export interface baseBlog {
     isHot: boolean
 }
 export interface blogMarkdown extends baseBlog{
-    markdown : string
+    markdown : string,
+    seo : string[]
 }

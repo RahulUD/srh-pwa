@@ -8,7 +8,15 @@ import { MarkedOptions, MarkedRenderer } from 'ngx-markdown';
 import { SecurityContext } from '@angular/core';
 import { SharedModule } from './shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import {
+  SocialLoginModule,
+  SocialAuthServiceConfig,
+} from '@abacritt/angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider,
+} from '@abacritt/angularx-social-login';
+import { LoginComponent } from './login/login.component';
 export function markedOptionsFactory(): MarkedOptions {
   const renderer = new MarkedRenderer();
 
@@ -26,14 +34,13 @@ export function markedOptionsFactory(): MarkedOptions {
   };
 }
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent, LoginComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    SharedModule,ReactiveFormsModule,
+    SharedModule,
+    ReactiveFormsModule,
     MarkdownModule.forRoot({
       sanitize: SecurityContext.NONE,
       loader: HttpClient,
@@ -43,7 +50,43 @@ export function markedOptionsFactory(): MarkedOptions {
       },
     }),
   ],
-  providers: [ Title  ],
-  bootstrap: [AppComponent]
+  providers: [
+    Title,
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: true,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '193519617627-hidmtjc8uqjpijc5veo494ghvgb96rpb.apps.googleusercontent.com'
+            ),
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('324650432515924'),
+          },
+          // {
+          //   id: AmazonLoginProvider.PROVIDER_ID,
+          //   provider: new AmazonLoginProvider(
+          //     'amzn1.application-oa2-client.f074ae67c0a146b6902cc0c4a3297935'
+          //   ),
+          // },
+          // {
+          //   id: VKLoginProvider.PROVIDER_ID,
+          //   provider: new VKLoginProvider('7624815'),
+          // },
+          // {
+          //   id: MicrosoftLoginProvider.PROVIDER_ID,
+          //   provider: new MicrosoftLoginProvider(
+          //     '0611ccc3-9521-45b6-b432-039852002705'
+          //   ),
+          // },
+        ],
+      } as SocialAuthServiceConfig,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

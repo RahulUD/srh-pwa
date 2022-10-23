@@ -31,6 +31,7 @@ import { DialogueComponent } from './core/dialogue/dialogue.component';
     SociallinksComponent,
     SocialItemComponent,
     DialogueComponent,
+    
 
   ],
   imports: [
@@ -46,7 +47,8 @@ import { DialogueComponent } from './core/dialogue/dialogue.component';
     ModelComponent,
     ToasterComponent,
     MarqueeComponent,
-    SociallinksComponent
+    SociallinksComponent,
+    
   ]
 })
 export class SharedModule { }

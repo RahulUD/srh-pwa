@@ -10,6 +10,15 @@
 table {
     background-color: red($color: #000000) !important;
 }
-.blockquote{
+
+.blockquote {
     background-color: yellow;
+}
+
+.seo {
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }

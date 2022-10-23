@@ -9,7 +9,7 @@
                     <em>~ By Paul Andrew on Jun 17th, 2022</em>
                 </div> -->
         <div>
-          <span *ngFor="let seoo of blog.seo" class="badge me-1 text-bg-primary">{{seoo}}</span>
+          <span *ngFor="let seoo of blog.seo" class="badge me-1 text-bg-primary seo" [routerLink]="['/blogs', seoo]">{{seoo}}</span>
         </div>
       </div>
       <hr />

@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center m-2 fs-4">
-    <div><i [class]="social.class" [ngClass]="{'text-white': isWhiteAndBlack}" ></i></div>
+<div class="d-flex justify-content-center m-2 fs-4 social-item" [ngClass]="{'border-red': isWhiteAndBlack}">
+    <div><i [class]="social.class" [ngClass]="{'text-white border-red': isWhiteAndBlack}"></i></div>
     <div class="d-none d-lg-block ms-2">{{social.name}}</div>
 </div>

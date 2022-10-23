@@ -1,0 +1,13 @@
+@import "./../../../../assets/scss/custom.scss";
+.social-item{
+    cursor: pointer;
+    border-bottom: 2px solid rgba(0,0,0,0.001);
+    &:hover{
+        border-bottom: 2px solid $blue;
+    }
+}
+.border-red{
+    &:hover{
+        border-bottom: 2px solid red;
+    }
+}

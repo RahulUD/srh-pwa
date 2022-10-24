@@ -18,7 +18,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this._authService.authState.subscribe((user) => {
-      this.userService._user.next({...user, avatar:user.photoUrl})
+      this.userService.setAuthUser({ ...user,
+        avatar: user.photoUrl,
+        password: '',
+        date_of_birth: undefined,
+        providerId: user.id})
       this.userService.upsert(user.email, {
         ...user,
         avatar: user.photoUrl,
@@ -49,6 +53,7 @@ export class LoginComponent implements OnInit {
 
   signOut(): void {
     this._authService.signOut();
+    this.userService.deleteAuthUser();
   }
 
   refreshGoogleToken(): void {

@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
-    <a class="navbar-brand" href="#">
+    
       <app-logo></app-logo>
-    </a>
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
       aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -21,21 +21,19 @@
             <a class="nav-link" href="#">Link</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown link
             </a>
+          
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Action</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
         </ul>
-        <button class="btn btn-outline-light" routerLink="/login">login / Register</button>
+        <button class="btn btn-outline-light" routerLink="/login" *ngIf="userService.isLoggedIn$ | async; else profile">{{user?.name}}</button>
       </div>
     </div>
   </div>
-</nav>
+</nav><ng-template #profile><button class="btn btn-outline-light" routerLink="/login">Login/ Register</button></ng-template>

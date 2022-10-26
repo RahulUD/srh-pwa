@@ -1,39 +1,59 @@
-import { AmazonLoginProvider, FacebookLoginProvider, GoogleLoginProvider, MicrosoftLoginProvider, SocialAuthService, SocialUser, VKLoginProvider } from '@abacritt/angularx-social-login';
+import {
+  AmazonLoginProvider,
+  FacebookLoginProvider,
+  GoogleLoginProvider,
+  MicrosoftLoginProvider,
+  SocialAuthService,
+  SocialUser,
+  VKLoginProvider,
+} from '@abacritt/angularx-social-login';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { baseUser } from 'src/types/user';
 import { UserService } from '../service/user.service';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-
   GoogleLoginProvider = GoogleLoginProvider;
 
-  constructor(private router: Router,private readonly _authService: SocialAuthService, private userService: UserService) {}
+  constructor(
+    private router: Router,
+    private readonly _authService: SocialAuthService,
+    private userService: UserService
+  ) {}
 
   ngOnInit() {
     this._authService.authState.subscribe((user) => {
-      this.userService.setAuthUser({ ...user,
-        avatar: user.photoUrl,
-        password: '',
-        date_of_birth: undefined,
-        providerId: user.id})
-      this.userService.upsert(user.email, {
+      this.userService.setAuthUser({
         ...user,
         avatar: user.photoUrl,
         password: '',
         date_of_birth: undefined,
-        providerId: user.id
-      }).subscribe(res=>{
-        this.router.navigate(['/dashboard']);
-      })
+        providerId: user.id,
+      });
+      this.userService
+        .upsert(user.email, {
+          ...user,
+          avatar: user.photoUrl,
+          password: '',
+          date_of_birth: undefined,
+          providerId: user.id,
+        })
+        .subscribe((res) => {
+          this.router.navigate(['/dashboard']);
+        });
     });
   }
+
+  signInForm = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl(''),
+  });
 
   signInWithFB(): void {
     this._authService.signIn(FacebookLoginProvider.PROVIDER_ID);
@@ -58,5 +78,16 @@ export class LoginComponent implements OnInit {
 
   refreshGoogleToken(): void {
     this._authService.refreshAuthToken(GoogleLoginProvider.PROVIDER_ID);
+  }
+  localSignIn() {
+    this.userService
+      .signIn(
+        this.signInForm.value.email ?? '',
+        this.signInForm.value.password ?? ''
+      )
+      .subscribe((user) => {
+        this.userService.setAuthUser(user);
+        this.router.navigate(['/dashboard']);
+      });
   }
 }

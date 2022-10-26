@@ -28,6 +28,6 @@
 </div>
 <ng-template #marqueeContent>
     <div>
-        <span *ngFor="let item of marqueeData" class="bg-light  py-1 badge text-primary m-1 marquee-item"><a [href]="item.url" target="_blank">{{item.title}}</a></span>
+        <span *ngFor="let item of marqueeData" class="bg-light  py-1 badge text-primary m-1 marquee-item"><a [routerLink]="['/blogs/getblogs', 'seo',item.title]">{{item.title}}</a></span>
     </div>
 </ng-template>

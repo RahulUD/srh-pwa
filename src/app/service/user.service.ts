@@ -40,4 +40,7 @@ export class UserService {
       formData
     );
   }
+  signIn(email: string, password: string){
+    return this.http.post<baseUser>(`${environment.endPoints.users}/signIn`,{email, password});
+  }
 }

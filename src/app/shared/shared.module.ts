@@ -14,6 +14,7 @@ import { MarqueeComponent } from './marquee/marquee.component';
 import { SociallinksComponent } from './sociallinks/sociallinks.component';
 import { SocialItemComponent } from './sociallinks/social-item/social-item.component';
 import { DialogueComponent } from './core/dialogue/dialogue.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 
@@ -31,6 +32,7 @@ import { DialogueComponent } from './core/dialogue/dialogue.component';
     SociallinksComponent,
     SocialItemComponent,
     DialogueComponent,
+    PaginationComponent,
     
 
   ],
@@ -48,7 +50,7 @@ import { DialogueComponent } from './core/dialogue/dialogue.component';
     ToasterComponent,
     MarqueeComponent,
     SociallinksComponent,
-    
+    PaginationComponent
   ]
 })
 export class SharedModule { }

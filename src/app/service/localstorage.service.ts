@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class LocalstorageService {
-  key = '123';
 
+  authuser = 'AuthUser'
   constructor() {}
 
   public saveData(key: string, value: any) {

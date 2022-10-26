@@ -15,13 +15,13 @@ export class BlogallResolver implements Resolve<boolean> {
   requestObj = {limit: 25, page: 1, fields : '_id,title,description'}
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
     let result = this.blogsService.getBlogs({
-      params: { ...this.requestObj,category: 'Results' },
+      params: { ...this.requestObj,value: 'Results' },
     });
     let admitCard = this.blogsService.getBlogs({
-      params: { ...this.requestObj,category: 'Admit Card' },
+      params: { ...this.requestObj,value: 'Admit Card' },
     });
     let latestJob = this.blogsService.getBlogs({
-      params: { ...this.requestObj,category: 'Latest Jobs' },
+      params: { ...this.requestObj,value: 'Latest Jobs' },
     });
     let hots = this.blogsService.getBlogs({
       params: { ...this.requestObj,isHot: true },

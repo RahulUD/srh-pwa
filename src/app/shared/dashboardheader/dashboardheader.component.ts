@@ -15,8 +15,8 @@ export class DashboardheaderComponent implements OnInit {
   constructor(
     public sharedService: SharedService,
     private authService: SocialAuthService,
+    private router: Router,
     public userService: UserService,
-    private router: Router
   ) {
       this.userService.authUser$.subscribe(user=> this.user= user)
   }

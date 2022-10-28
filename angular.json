@@ -27,7 +27,7 @@
             "styles": [
               "src/assets/scss/custom.scss",
               "src/styles.scss",
-              "./node_modules/prismjs/themes/prism-material-oceanic.css",
+              "./node_modules/prismjs/themes/prism-coy.css",
               "./node_modules/katex/dist/katex.min.css"
             ],
             "scripts": [

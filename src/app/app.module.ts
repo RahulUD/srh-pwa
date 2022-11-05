@@ -17,6 +17,13 @@ import {
   FacebookLoginProvider,
 } from '@abacritt/angularx-social-login';
 import { LoginComponent } from './login/login.component';
+import { AngularFireMessagingModule } from '@angular/fire/compat/messaging';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+import { NotificationService } from './service/notification.service';
+import { AsyncPipe } from '@angular/common';
 export function markedOptionsFactory(): MarkedOptions {
   const renderer = new MarkedRenderer();
 
@@ -39,8 +46,14 @@ export function markedOptionsFactory(): MarkedOptions {
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    AngularFireAuthModule,
+    AngularFireMessagingModule,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFireModule,
     SharedModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
     MarkdownModule.forRoot({
       sanitize: SecurityContext.NONE,
       loader: HttpClient,
@@ -51,6 +64,8 @@ export function markedOptionsFactory(): MarkedOptions {
     }),
   ],
   providers: [
+    NotificationService,
+    AsyncPipe,
     Title,
     {
       provide: 'SocialAuthServiceConfig',

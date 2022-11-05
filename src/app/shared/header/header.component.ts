@@ -15,8 +15,7 @@ export class HeaderComponent implements OnInit {
   user!: baseUser|null
   constructor(private authService: SocialAuthService,
     private router: Router,public sharedService : SharedService, public userService : UserService) { 
-    this.userService.authUser$.subscribe((user)=> {this.user = user; console.log("xxxxx",user)})
-    console.log(this.user)
+    this.userService.authUser$.subscribe((user)=> {this.user = user})
   }
 
   ngOnInit(): void {

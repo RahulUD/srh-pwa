@@ -17,7 +17,6 @@ export class ListComponent implements OnInit {
     });
     this.route.data.subscribe(blogs  => {
       this.blogs = blogs['blogs']
-      console.log(blogs['blogs'])
     });
   }
 }

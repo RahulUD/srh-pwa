@@ -17,7 +17,6 @@ export class BlogsResolver implements Resolve<boolean> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<any> {
-    console.log(route, state)
     return this.blogsService.getBlogs({
       params: { ...this.requestObj, ...route.params },
     });

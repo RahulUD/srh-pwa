@@ -1,18 +1,48 @@
 // .auth{
 //     text-align: right;
 // }
+@import './../../../../node_modules/bootstrap/dist/css/bootstrap.css';
+
 .blog-title {
     h1 {
         font-weight: bold;
     }
 }
 
-table {
-    background-color: red($color: #000000) !important;
+.blockquote {
+    border-left: 5px solid gray;
+    background-color: lightgray;
+    padding: 1px 1px 1px 10px;
+
+    .blockquote {
+        border-left: 5px solid blue;
+        background-color: lightblue;
+    }
 }
 
-.blockquote {
-    background-color: yellow;
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid;
+}
+table, td, th {  
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+th {
+    background-color: gray;
+    color: white;
 }
 
 .seo {

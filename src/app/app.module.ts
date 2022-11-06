@@ -24,6 +24,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { NotificationService } from './service/notification.service';
 import { AsyncPipe } from '@angular/common';
+
 export function markedOptionsFactory(): MarkedOptions {
   const renderer = new MarkedRenderer();
 
@@ -43,6 +44,7 @@ export function markedOptionsFactory(): MarkedOptions {
 @NgModule({
   declarations: [AppComponent, LoginComponent],
   imports: [
+
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,

@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-6">
+        <h2>Template Form <code>[(ngModel)]</code> - Demo</h2>
+    </div>
+    <div class="col-md-6 action-buttons">
+        <button class="btn btn-outline-secondary btn-sm" (click)="showFullScreen(true)">
+            Full Screen Preview
+        </button>
+    </div>
+</div>
+<hr />
+
+<form novalidate>
+    <div class="editor">
+        <label>Editor (with French locale)</label>
+        <angular-markdown-editor
+        textareaId="editor1" 
+        name="markdownText" 
+        (onFullscreenExit)="hidePreview()">
+      </angular-markdown-editor>
+    </div>
+</form>
+
+<hr />
+<h3 class="text-success bold">Preview</h3>
+<div class="result-preview outline">
+    <markdown [data]="markdownText"></markdown>
+</div>

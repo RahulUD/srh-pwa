@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
     "@popperjs/core": "^2.11.6",
+    "angular-markdown-editor": "^3.0.0",
     "bootstrap": "^5.2.1",
     "bootstrap-icons": "^1.9.1",
     "firebase": "^9.13.0",

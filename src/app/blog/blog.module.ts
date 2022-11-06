@@ -13,7 +13,8 @@ import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { MostclickedComponent } from './mostclicked/mostclicked.component';
 import { MostclickeditemComponent } from './mostclicked/mostclickeditem/mostclickeditem.component';
 import { BlogNavigationComponent } from './blog-navigation/blog-navigation.component';
-
+import { TemplateComponent } from './template/template.component';
+import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
 
 @NgModule({
   declarations: [
@@ -26,13 +27,16 @@ import { BlogNavigationComponent } from './blog-navigation/blog-navigation.compo
     MostclickedComponent,
     MostclickeditemComponent,
     BlogNavigationComponent,
+    TemplateComponent,
     
   ],
   imports: [
     CommonModule,
+    AngularMarkdownEditorModule,
     BlogRoutingModule,
     SharedModule,
     MarkdownModule.forChild(),
-  ]
+  ],
+  exports:[TemplateComponent]
 })
 export class BlogModule { }

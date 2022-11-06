@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , ViewEncapsulation} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { blogMarkdown } from 'src/types/blog';
 import { Title, Meta } from '@angular/platform-browser';
@@ -7,6 +7,7 @@ import { Title, Meta } from '@angular/platform-browser';
   selector: 'app-blogdetail',
   templateUrl: './blogdetail.component.html',
   styleUrls: ['./blogdetail.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class BlogdetailComponent implements OnInit {
   blog!: blogMarkdown;

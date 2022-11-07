@@ -1,4 +1,6 @@
-export interface baseCategory {
+export interface baseCategory 
+
+{
     title: string,
     description : string,
     _id: string,

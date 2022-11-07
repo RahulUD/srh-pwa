@@ -1,5 +1,5 @@
 import { Component, OnInit , ViewEncapsulation} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { blogMarkdown } from 'src/types/blog';
 import { Title, Meta } from '@angular/platform-browser';
 
@@ -14,7 +14,8 @@ export class BlogdetailComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private title: Title,
-    private meta: Meta
+    private meta: Meta,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -22,6 +23,12 @@ export class BlogdetailComponent implements OnInit {
       this.blog = res['blogs'];
       this.title.setTitle(this.blog.title);
       this.addSeo(this.blog.seo, this.blog.title, this.blog.description);
+      this.router.events.subscribe((evt) => {
+        if (!(evt instanceof NavigationEnd)) {
+            return;
+        }
+        window.scrollTo(0, 0)
+    });
     });
   }
 

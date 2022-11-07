@@ -6,7 +6,6 @@ export interface baseCategory {
     cat2: string,
     cat3: string,
 }
-
 export interface categoryType {
     _id: string,
     cat1?: string,

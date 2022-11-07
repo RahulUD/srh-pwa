@@ -7,6 +7,7 @@ export interface baseBlog {
     isHot: boolean,
     updatedAt: string, createdAt: string
 }
+
 export interface blogMarkdown extends baseBlog{
     markdown : string,
     seo : string[]

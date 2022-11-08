@@ -36,7 +36,7 @@
           </li> -->
         </ul>
         <button class="btn btn-outline-light" routerLink="/login"
-          *ngIf="userService.isLoggedIn$ | async; else profile">{{user?.name}}</button>
+          *ngIf="userService.isLoggedIn$ | async; else login">{{user?.name}}</button>
         <button class="btn btn-primary" (click)="logout()" *ngIf="userService.isLoggedIn$ | async">
           <i class="bi bi-power text-danger logout"></i>
         </button>
@@ -44,4 +44,4 @@
     </div>
   </div>
 </nav>
-<ng-template #profile><button class="btn btn-outline-light" routerLink="/login">Login/ Register</button></ng-template>
+<ng-template #login><div class="text-light login" routerLink="/login">Login/ Register &nbsp;<i class="bi bi-person-circle fs-3"></i></div></ng-template>

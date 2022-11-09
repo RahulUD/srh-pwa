@@ -1,0 +1,13 @@
+.signin {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url('./../img/jobs1.jpg');
+    background-size: cover;
+
+    .auth-card {
+        max-width: 30rem;
+    }
+    .page-title{
+        text-align: center;
+    }
+}

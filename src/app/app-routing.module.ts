@@ -8,7 +8,8 @@ import { LoginComponent } from './login/login.component';
 const routes: Routes = [
   {path : '', loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)},
   {path : 'dashboard', canActivate: [AuthGuard], loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)},
-  {path : 'login', canActivate: [PublicGuard], component: LoginComponent}
+  {path : 'login', canActivate: [PublicGuard], component: LoginComponent},
+  {path : 'user/auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
 ];
 
 @NgModule({

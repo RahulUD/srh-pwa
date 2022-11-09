@@ -1,0 +1,37 @@
+<div class="signin d-flex justify-content-center align-items-center">
+    <div class="card ms-3 me-3 auth-card h-100">
+        <img src="../../../assets/img/logo/logolGold.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h2 class="card-title page-title">Login</h2>
+            <form >
+                <div class="mb-3">
+                    <srh-input name="email" inputLevel='Enter your email.' inputType='email' [isDissabled]=false
+                        classes="form-control" (inputValue)="setEmail($event)" [value]="email"></srh-input>
+                </div>
+                <div class="mb-3">
+                    <srh-input name="password" inputLevel='Password.' inputType='password' [isDissabled]=false
+                        classes="form-control" (inputValue)="setPassword($event)" [value]="password"></srh-input>
+                </div>
+                <div class="mb-3 form-check">
+                    <srh-input name="rememberme" inputLevel='Remember me !' inputType='checkbox' [isDissabled]=false
+                        classes="form-check-input" (inputValue)="setRememberMe($event)"></srh-input>
+                </div>
+                <a routerLink="/forgotpassword">Forgot Password ?</a><br />
+                <a routerLink="/forgotpassword">New here? Create an account.</a>
+                <div class="d-grid gap-2 mt-2">
+                    <button class="btn btn-primary" type="button" (click)="signInHandler()">Sign In</button>
+                </div>
+            </form>
+            <div class="social-container my-4">
+                <h6 class="page-title mt-5 text-muted center-separator">Social login</h6>
+                <div class="">
+                    <i class="bi bi-facebook text-primary m-1 fs-1"></i>
+                    <i class="bi bi-google text-danger m-1 fs-1"></i>
+                </div>
+            </div>
+            <!-- <div  class="d-grid gap-2 mt-5">
+                <button class="btn btn-secondary" type="button">Create an Account</button>
+              </div> -->
+        </div>
+    </div>
+</div>

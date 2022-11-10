@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signin',
@@ -6,25 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signin.component.scss'],
 })
 export class SigninComponent implements OnInit {
-  constructor() {}
-  rememberMe!: boolean;
-  email!: string;
-  password!: string;
-
-  ngOnInit(): void {}
-
-  setEmail($value: string) {
-    this.email = $value;
+  constructor() {
+    this.signInForm.valueChanges.subscribe(val=> console.log(val))
   }
-  setPassword($value: string) {
-    this.password = $value;
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
-  setRememberMe($value: string) {
-    this.rememberMe = !this.rememberMe;
-  }
+ 
   signInHandler() {
-    this.rememberMe = false;
-    this.email = '';
-    this.password = '';
+    
   }
+
+  signInForm = new FormGroup({
+    email: new FormControl('',[Validators.required, Validators.email]),
+    password: new FormControl('',[Validators.required]),
+    rememberMe: new FormControl(false),
+  });
+
+  
 }

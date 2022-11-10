@@ -2,10 +2,7 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnChanges,
-  OnInit,
   Output,
-  SimpleChanges,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
@@ -14,11 +11,8 @@ import { FormControl } from '@angular/forms';
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
 })
-export class InputComponent implements OnInit, OnChanges {
+export class InputComponent {
   constructor() {}
-  ngOnChanges(changes: SimpleChanges): void {
-    this.formControl.setValue(changes['value'].currentValue);
-  }
   @Input()
   name!: string;
 
@@ -32,7 +26,7 @@ export class InputComponent implements OnInit, OnChanges {
   isDissabled!: boolean;
 
   @Input()
-  value !: string | boolean;
+  control = new FormControl()
 
   @Input()
   style!: {};
@@ -50,13 +44,15 @@ export class InputComponent implements OnInit, OnChanges {
   validationMessages!: [string];
 
   @Output()
-  inputValue = new EventEmitter<string>();
+  inputValue = new EventEmitter<{fieldName: string, fieldValue : any}>();
 
-  formControl = new FormControl();
-
-  ngOnInit(): void {
-    this.formControl.valueChanges.subscribe((value) => {
-      this.inputValue.emit(value);
-    });
+  errorMessages : Record<string, string> = {
+    required  : 'The field is required',
+    email : 'The mail is invalid',
+    password : 'The password is invalid'
+  }
+  displayErrors (){
+    const {dirty, touched, errors} = this.control
+    return dirty && touched && errors
   }
 }

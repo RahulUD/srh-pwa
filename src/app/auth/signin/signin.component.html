@@ -3,18 +3,19 @@
         <img src="../../../assets/img/logo/logolGold.png" routerLink="/" class="card-img-top" alt="...">
         <div class="card-body">
             <h2 class="card-title page-title">Login</h2>
-            <form >
+            <form [formGroup]="signInForm">
                 <div class="mb-3">
                     <srh-input name="email" inputLevel='Enter your email.' inputType='email' [isDissabled]=false
-                        classes="form-control" (inputValue)="setEmail($event)" [value]="email"></srh-input>
+                        classes="form-control" [control]="signInForm.controls.email"></srh-input>
                 </div>
                 <div class="mb-3">
                     <srh-input name="password" inputLevel='Password.' inputType='password' [isDissabled]=false
-                        classes="form-control" (inputValue)="setPassword($event)" [value]="password"></srh-input>
+                        classes="form-control" [control]="signInForm.controls.password"></srh-input>
                 </div>
                 <div class="mb-3 form-check">
-                    <srh-input name="rememberme" inputLevel='Remember me !' inputType='checkbox' [isDissabled]=false
-                        classes="form-check-input" (inputValue)="setRememberMe($event)"></srh-input>
+                    <srh-input name="rememberme" inputLevel='Remember me !' inputType='checkbox' [isDissabled]=false 
+                    [control]="signInForm.controls.rememberMe"
+                        classes="form-check-input"></srh-input>
                 </div>
                 <a routerLink="/forgotpassword">Forgot Password ?</a><br />
                 <a routerLink="/forgotpassword">New here? Create an account.</a>

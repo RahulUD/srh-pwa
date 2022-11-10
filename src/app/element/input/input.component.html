@@ -5,8 +5,8 @@
 <input [formControl]="control" *ngIf="inputType==='checkbox'" type="checkbox" [disabled]="isDissabled"
     [ngStyle]="{style}" [class]="classes" [ngClass]="{'input-error' : displayErrors()}" [id]="name"
     [attr.aria-label]="ariaDescribedby">
+<div class="form-text">{{helpText}}</div>
 <ng-container *ngIf="displayErrors()">
     <div class="badge rounded-pill text-bg-danger" *ngFor="let err of control.errors | keyvalue">{{
         errorMessages[err.key] }}</div>
 </ng-container>
-<div class="form-text">{{helpText}}</div>

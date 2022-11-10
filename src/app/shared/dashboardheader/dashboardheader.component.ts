@@ -1,8 +1,8 @@
 import { SocialAuthService } from '@abacritt/angularx-social-login';
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import {  Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/service/auth.service';
 import { SharedService } from 'src/app/service/shared.service';
-import { UserService } from 'src/app/service/user.service';
 import { baseUser } from 'src/types/user';
 
 @Component({
@@ -14,19 +14,16 @@ export class DashboardheaderComponent implements OnInit {
   user!: baseUser | null
   constructor(
     public sharedService: SharedService,
-    private authService: SocialAuthService,
     private router: Router,
-    public userService: UserService,
+    public authService: AuthService,
   ) {
-      this.userService.authUser$.subscribe(user=> this.user= user)
+      this.authService.authUser$.subscribe(user=> this.user= user)
   }
   ngOnInit(): void {
     
   }
 
   logout() {
-    this.authService.signOut();
-    this.userService.deleteAuthUser()
     this.router.navigate(['/'])
   }
 }

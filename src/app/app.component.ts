@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './auth/service/auth.service';
 import { LocalstorageService } from './service/localstorage.service';
 import { NotificationService } from './service/notification.service';
 import { SharedService } from './service/shared.service';
-import { UserService } from './service/user.service';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   constructor(
     public sharedService: SharedService,
     private localStorageService: LocalstorageService,
-    private userServices: UserService,
+    private authServices: AuthService,
     private messagingService: NotificationService
   ) {}
   ngOnInit(): void {
@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
     this.message = this.messagingService.currentMessage;
 
     if (authData) {
-      this.userServices.setAuthUser(authData);
+      this.authServices.setAuthUser(authData);
     }
   }
 }

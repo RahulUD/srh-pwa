@@ -8,7 +8,7 @@ import { LocalstorageService } from './localstorage.service';
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {
+export class authService {
   private authUserSubject = new BehaviorSubject<baseUser | null>(null);
   authUser$: Observable<baseUser | null> = this.authUserSubject.asObservable();
 

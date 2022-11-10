@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { baseUser } from 'src/types/user';
-import { UserService } from '../service/user.service';
+import { authService } from '../service/user.service';
 
 @Component({
   selector: 'app-login',
@@ -24,19 +24,19 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private readonly _authService: SocialAuthService,
-    private userService: UserService
+    private authService: authService
   ) {}
 
   ngOnInit() {
     this._authService.authState.subscribe((user) => {
-      this.userService.setAuthUser({
+      this.authService.setAuthUser({
         ...user,
         avatar: user.photoUrl,
         password: '',
         date_of_birth: undefined,
         providerId: user.id,
       });
-      this.userService
+      this.authService
         .upsert(user.email, {
           ...user,
           avatar: user.photoUrl,
@@ -73,20 +73,20 @@ export class LoginComponent implements OnInit {
 
   signOut(): void {
     this._authService.signOut();
-    this.userService.deleteAuthUser();
+    this.authService.deleteAuthUser();
   }
 
   refreshGoogleToken(): void {
     this._authService.refreshAuthToken(GoogleLoginProvider.PROVIDER_ID);
   }
   localSignIn() {
-    this.userService
+    this.authService
       .signIn(
         this.signInForm.value.email ?? '',
         this.signInForm.value.password ?? ''
       )
       .subscribe((user) => {
-        this.userService.setAuthUser(user);
+        this.authService.setAuthUser(user);
         this.router.navigate(['/dashboard']);
       });
   }

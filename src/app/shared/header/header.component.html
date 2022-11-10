@@ -35,13 +35,13 @@
             </ul>
           </li> -->
         </ul>
-        <button class="btn btn-outline-light" routerLink="/login"
-          *ngIf="userService.isLoggedIn$ | async; else login">{{user?.name}}</button>
-        <button class="btn btn-primary" (click)="logout()" *ngIf="userService.isLoggedIn$ | async">
+        <button class="btn btn-outline-light" routerLink="/user/auth/signin"
+          *ngIf="authService.isLoggedIn$ | async; else login">{{user?.name}}</button>
+        <button class="btn btn-primary" (click)="logout()" *ngIf="authService.isLoggedIn$ | async">
           <i class="bi bi-power text-danger logout"></i>
         </button>
       </div>
     </div>
   </div>
 </nav>
-<ng-template #login><div class="text-light login" routerLink="/login">Login/ Register &nbsp;<i class="bi bi-person-circle fs-3"></i></div></ng-template>
+<ng-template #login><div class="text-light login" routerLink="/user/auth/signin">Login/ Register &nbsp;<i class="bi bi-person-circle fs-3"></i></div></ng-template>

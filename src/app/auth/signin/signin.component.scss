@@ -1,21 +1,23 @@
 @import '../../../assets/scss/authcard';
 
-.social-container{
-    text-align: center;
+.social-container {
+  text-align: center;
 }
+
 .center-separator {
-    display: flex;
+  display: flex;
   line-height: 1em;
   color: gray;
 }
 
-.center-separator::before, .center-separator::after {
-    content: '';
-    display: inline-block;
-    flex-grow: 1;
-    margin-top: 0.5em;
-    background: gray;
-    height: 1px;
-    margin-right: 10px;
-    margin-left: 10px;
-  }
+.center-separator::before,
+.center-separator::after {
+  content: '';
+  display: inline-block;
+  flex-grow: 1;
+  margin-top: 0.5em;
+  background: gray;
+  height: 1px;
+  margin-right: 10px;
+  margin-left: 10px;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LocalstorageService } from 'src/app/service/localstorage.service';
@@ -9,16 +9,13 @@ import { AuthService } from '../service/auth.service';
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.scss'],
 })
-export class SigninComponent implements OnInit {
+export class SigninComponent {
   constructor(
     private authService: AuthService,
     private router: Router,
     private localstorageService: LocalstorageService
   ) {
     this.signInForm.valueChanges.subscribe((val) => console.log(val));
-  }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 
   signInHandler() {}

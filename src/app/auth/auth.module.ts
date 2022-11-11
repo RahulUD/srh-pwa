@@ -7,6 +7,7 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
 import { AuthRoutingModule } from './auth-routing.module';
 import { ElementModule } from '../element/element.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SocialLoginComponent } from './social-login/social-login.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SigninComponent,
     ResetpasswordComponent,
     ChangepasswordComponent,
+    SocialLoginComponent,
   ],
   imports: [CommonModule, AuthRoutingModule, ElementModule,ReactiveFormsModule],
 })

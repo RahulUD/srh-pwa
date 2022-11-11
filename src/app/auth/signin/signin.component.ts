@@ -3,19 +3,20 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LocalstorageService } from 'src/app/service/localstorage.service';
 import { AuthService } from '../service/auth.service';
-
+import { signUpText } from 'src/app/util/textConstant';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.scss'],
 })
 export class SigninComponent {
+  signUpText=signUpText
   constructor(
     private authService: AuthService,
     private router: Router,
     private localstorageService: LocalstorageService
   ) {
-    this.signInForm.valueChanges.subscribe((val) => console.log(val));
+    // this.signInForm.valueChanges.subscribe((val) => console.log(val));
   }
 
   signInHandler() {}

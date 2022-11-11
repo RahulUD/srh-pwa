@@ -18,18 +18,12 @@
                         classes="form-check-input"></srh-input>
                 </div>
                 <a>Forgot Password ?</a><br />
-                <a routerLink="/user/auth/signup">New here? Create an account.</a>
+                <a routerLink="/user/auth/signup">{{signUpText}}</a>
                 <div class="d-grid gap-2 mt-2">
                     <button class="btn btn-primary" type="button" (click)="localSignIn()" >Sign In</button>
                 </div>
             </form>
-            <div class="social-container my-4">
-                <h6 class="page-title mt-5 text-muted center-separator">Social login</h6>
-                <div class="">
-                    <i class="bi bi-facebook text-primary m-1 fs-1"></i>
-                    <i class="bi bi-google text-danger m-1 fs-1"></i>
-                </div>
-            </div>
+           <auth-social-login></auth-social-login>
             <!-- <div  class="d-grid gap-2 mt-5">
                 <button class="btn btn-secondary" type="button">Create an Account</button>
               </div> -->

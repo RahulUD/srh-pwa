@@ -1,14 +1,20 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { Router } from '@angular/router';
+import { signInText, passwordHelpText } from 'src/app/util/textConstant';
+import { environment } from 'src/environments/environment';
+import { baseUser } from 'src/types/user';
+import { AuthService } from '../service/auth.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-
-  constructor() { }
+  signInText=signInText
+  passwordHelpText=passwordHelpText
+  constructor( private router: Router, private authService : AuthService) { }
 
   ngOnInit(): void {
   }
@@ -20,7 +26,16 @@ export class SignupComponent implements OnInit {
     rePassword: new FormControl('', [Validators.required]),
   });
 
-  localSignUp(){
-    
+  localSingUp(){
+    this.authService
+      .singUp(
+        {name :this.signUpForm.value.name,
+        email :this.signUpForm.value.email,
+        password: this.signUpForm.value.password}
+      )
+      .subscribe((user) => {
+        this.authService.setAuthUser(user);
+        this.router.navigate(['/dashboard']);
+      });
   }
 }

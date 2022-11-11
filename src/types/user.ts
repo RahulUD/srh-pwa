@@ -8,3 +8,8 @@ export interface baseUser {
   provider?: string;
   providerId?: string;
 }
+export interface signUpFormData {
+  name : string | null | undefined,
+  email: string | null | undefined,
+  password : string | null | undefined
+}

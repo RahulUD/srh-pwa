@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable, tap } from 'rxjs';
 import { LocalstorageService } from 'src/app/service/localstorage.service';
 import { environment } from 'src/environments/environment';
-import { baseUser } from 'src/types/user';
+import { baseUser, signUpFormData } from 'src/types/user';
 
 @Injectable({
   providedIn: 'root',
@@ -26,5 +26,8 @@ export class AuthService {
       email,
       password,
     });
+  }
+  singUp(signUpFormData : signUpFormData){
+    return this.http.post<baseUser>(`${environment.endPoints.users}/signUp`,signUpFormData);
   }
 }

@@ -2,28 +2,28 @@
     <div class="card ms-3 me-3 auth-card h-100">
         <img src="../../../assets/img/logo/logolGold.png" routerLink="/" class="card-img-top" alt="...">
         <div class="card-body">
-            <h2 class="card-title page-title">Login</h2>
+            <h2 class="card-title page-title mb-4">{{signIn}}</h2>
             <form [formGroup]="signInForm" >
                 <div class="mb-3">
                     <srh-input name="email" inputLevel='Enter your email.' inputType='email' [isDissabled]=false
                         classes="form-control" [control]="signInForm.controls.email"></srh-input>
                 </div>
                 <div class="mb-3">
-                    <srh-input helpText="Keep the password strong." name="password" inputLevel='Password.' inputType='password' [isDissabled]=false
+                    <srh-input [helpText]="passwordHelpText" name="password" inputLevel='Password.' inputType='password' [isDissabled]=false
                         classes="form-control" [control]="signInForm.controls.password"></srh-input>
                 </div>
                 <div class="mb-3 form-check">
-                    <srh-input name="rememberme" inputLevel='Remember me !' inputType='checkbox' [isDissabled]=false 
+                    <srh-input name="rememberme" [inputLevel]='rememberMe' inputType='checkbox' [isDissabled]=false 
                     [control]="signInForm.controls.rememberMe"
                         classes="form-check-input"></srh-input>
                 </div>
-                <a>Forgot Password ?</a><br />
+                <a routerLink="/user/auth/forgotpassword">{{forgotPass}}</a><br />
                 <a routerLink="/user/auth/signup">{{signUpText}}</a>
                 <div class="d-grid gap-2 mt-2">
-                    <button class="btn btn-primary" type="button" (click)="localSignIn()" >Sign In</button>
+                    <button class="btn btn-primary" type="button" (click)="localSignIn()" >{{signIn}}</button>
                 </div>
             </form>
-           <auth-social-login></auth-social-login>
+            <auth-social-login></auth-social-login>
             <!-- <div  class="d-grid gap-2 mt-5">
                 <button class="btn btn-secondary" type="button">Create an Account</button>
               </div> -->

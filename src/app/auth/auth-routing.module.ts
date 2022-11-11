@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
@@ -8,6 +9,7 @@ import { SignupComponent } from './signup/signup.component';
 const routes: Routes = [
     {path : 'signin',    component : SigninComponent},
     {path : 'signup',   component : SignupComponent},
+    {path : 'forgotpassword',   component : ForgotPassComponent},
     {path : 'passwordreset',   component : ResetpasswordComponent},
     {path : 'changepassword',   component : ChangepasswordComponent},
 ];

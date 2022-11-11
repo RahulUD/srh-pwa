@@ -8,6 +8,8 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { ElementModule } from '../element/element.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SocialLoginComponent } from './social-login/social-login.component';
+import { SharedModule } from '../shared/shared.module';
+import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { SocialLoginComponent } from './social-login/social-login.component';
     ResetpasswordComponent,
     ChangepasswordComponent,
     SocialLoginComponent,
+    ForgotPassComponent,
   ],
-  imports: [CommonModule, AuthRoutingModule, ElementModule,ReactiveFormsModule],
+  imports: [CommonModule, AuthRoutingModule, ElementModule,ReactiveFormsModule, SharedModule],
 })
 export class AuthModule {}

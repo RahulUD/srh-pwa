@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LocalstorageService } from 'src/app/service/localstorage.service';
 import { AuthService } from '../service/auth.service';
-import { signUpText } from 'src/app/util/textConstant';
+import { signUpText, forgotPass,passwordHelpText, signIn , rememberMe} from 'src/app/util/textConstant';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -11,6 +11,12 @@ import { signUpText } from 'src/app/util/textConstant';
 })
 export class SigninComponent {
   signUpText=signUpText
+  forgotPass=forgotPass
+  signIn =signIn
+  rememberMe= rememberMe
+  passwordHelpText=passwordHelpText
+
+  
   constructor(
     private authService: AuthService,
     private router: Router,

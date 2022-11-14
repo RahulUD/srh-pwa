@@ -9,7 +9,6 @@ import { DashboardhomeComponent } from './dashboardhome/dashboardhome.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreateBlogComponent } from './create-blog/create-blog.component';
 import { DashboardbloglistComponent } from './dashboardbloglist/dashboardbloglist.component';
-import { BlogModule } from '../blog/blog.module';
 
 
 @NgModule({
@@ -25,7 +24,6 @@ import { BlogModule } from '../blog/blog.module';
     DashboardRoutingModule,
     SharedModule,
     ReactiveFormsModule,
-    BlogModule
   ]
 })
 export class DashboardModule { }

@@ -17,7 +17,7 @@ export class AuthService {
     this.authUserSubject.next(baseUser);
   }
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private localStorageService : LocalstorageService) {
     this.isLoggedIn$ = this.authUser$.pipe(map((user) => !!user));
   }
 
@@ -29,5 +29,9 @@ export class AuthService {
   }
   singUp(signUpFormData : signUpFormData){
     return this.http.post<baseUser>(`${environment.endPoints.users}/signUp`,signUpFormData);
+  }
+  logout(){
+    this.authUserSubject.next(null)
+    this.localStorageService.removeData(this.localStorageService.authuser)
   }
 }

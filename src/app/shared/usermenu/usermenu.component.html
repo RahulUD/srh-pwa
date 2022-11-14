@@ -1,0 +1,45 @@
+<div class="dropdown" *ngIf="authService.isLoggedIn$ | async; else login" [title]="user?.name">
+    <div class="dropdown-toggle d-flex align-items-center h-100 profilethumb" data-bs-toggle="dropdown" aria-expanded="false">
+        <srh-avatar customclass="circle white-2-border" [avatar]="user?.avatar" dimension="40x40"></srh-avatar>
+        <i class="bi bi-patch-check-fill bluetickthumb text-dark"></i>
+    </div>
+    <ul class="dropdown-menu dropdown-menu-end profilecard">
+        <div class="menu-container">
+            <div class="mt-3 d-flex justify-content-center profile">
+                <srh-avatar customclass="circle white-2-border" [avatar]="user?.avatar" dimension="80x80"></srh-avatar>
+                <i class="bi bi-cloud-upload-fill editprofile text-warning fs-5"></i>
+            </div>
+            <div class="d-flex flex-column align-items-center mt-3">
+                <div>
+                    <h6>{{user?.name}} <i class="bi bi-patch-check-fill text-primary"></i></h6>
+                </div>
+                <div class="text-muted">{{user?.email}}</div>
+            </div>
+            <ul class="list-group list-group-flush mt-4">
+                <li routerLink="/dashboard" class="list-group-item d-flex justify-content-between align-items-center">
+                    Dashboard
+                    <i class="bi bi-speedometer"></i>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Profile
+                    <i class="bi bi-person-circle"></i>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Settings
+                    <i class="bi bi-gear-fill"></i>
+                </li>
+            </ul>
+            <div class="d-grid gap-2 mt-5">
+                <button class="btn btn-danger" type="button" (click)="logout()">Logout &nbsp; <i
+                        class="bi bi-power"></i></button>
+            </div>
+            <div class="text-center text-muted fs-6 text py-2">
+                Privacy policy • Terms of service
+            </div>
+        </div>
+    </ul>
+</div>
+<ng-template #login>
+    <div class="text-light login mt-2" routerLink="/user/auth/signin">Login/ Register
+    </div>
+</ng-template>

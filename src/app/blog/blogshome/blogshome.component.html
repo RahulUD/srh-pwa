@@ -1,5 +1,5 @@
 <div class="bg-dark">
-    <app-marquee speed="slow" [stopOnHover]="true">
+    <app-marquee speed="drowsy" [stopOnHover]="true">
         <ng-container *ngTemplateOutlet="marqueeContent"></ng-container>
     </app-marquee>
 </div>
@@ -28,6 +28,6 @@
 </div>
 <ng-template #marqueeContent>
     <div>
-        <span *ngFor="let item of marqueeData" class="bg-light  py-1 badge text-primary m-1 marquee-item"><a [routerLink]="['/blogs/getblogs', 'seo',item.title]">{{item.title}}</a></span>
+        <span *ngFor="let item of marqueeData" class="py-1 badge text-danger m-1 marquee-item"><span [routerLink]="['/blogs/getblogs', 'seo',item.title]"><b [style]="{color: getColor()}">{{item.title}}</b></span></span>
     </div>
 </ng-template>

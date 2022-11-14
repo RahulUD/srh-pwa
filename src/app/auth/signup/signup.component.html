@@ -1,32 +1,24 @@
-<div class="signin d-flex justify-content-center align-items-center">
-    <div class="card ms-3 me-3 auth-card h-100">
-        <img src="../../../assets/img/logo/logolGold.png" routerLink="/" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h2 class="card-title page-title mb-4">Sign Up</h2>
-            <form [formGroup]="signUpForm" >
-                <div class="mb-3">
-                    <srh-input name="name" inputLevel='Enter your Name.' inputType='text' [isDissabled]=false
-                        classes="form-control" [control]="signUpForm.controls.name"></srh-input>
-                </div>
-                <div class="mb-3">
-                    <srh-input name="email" inputLevel='Enter your email.' inputType='email' [isDissabled]=false
-                        classes="form-control" [control]="signUpForm.controls.email"></srh-input>
-                </div>
-                <div class="mb-3">
-                    <srh-input [helpText]="passwordHelpText" name="password" inputLevel='Password.' inputType='password' [isDissabled]=false
-                        classes="form-control" [control]="signUpForm.controls.password"></srh-input>
-                </div>
-                <div class="mb-3">
-                    <srh-input name="password" inputLevel='Re-Password.' inputType='password' [isDissabled]=false
-                        classes="form-control" [control]="signUpForm.controls.rePassword"></srh-input>
-                </div>
-                <a routerLink="/user/auth/forgotpassword">{{forgotPass}}</a><br />
-                <a routerLink="/user/auth/signin">{{signInText}}</a>
-                <div class="d-grid gap-2 mt-1">
-                    <button class="btn btn-primary" type="button" (click)="localSingUp()" >Create Account</button>
-                </div>
-            </form>
-            <auth-social-login></auth-social-login>
-        </div>
+<h2 class="card-title page-title mb-4 text-center">Sign Up</h2>
+<form [formGroup]="signUpForm">
+    <div class="mb-3">
+        <srh-input name="name" inputLevel='Enter your Name.' inputType='text' [isDissabled]=false classes="form-control"
+            [control]="signUpForm.controls.name"></srh-input>
     </div>
-</div>
+    <div class="mb-3">
+        <srh-input name="email" inputLevel='Enter your email.' inputType='email' [isDissabled]=false
+            classes="form-control" [control]="signUpForm.controls.email"></srh-input>
+    </div>
+    <div class="mb-3">
+        <srh-input [helpText]="passwordHelpText" name="password" inputLevel='Password.' inputType='password'
+            [isDissabled]=false classes="form-control" [control]="signUpForm.controls.password"></srh-input>
+    </div>
+    <div class="mb-3">
+        <srh-input name="password" inputLevel='Re-Password.' inputType='password' [isDissabled]=false
+            classes="form-control" [control]="signUpForm.controls.rePassword"></srh-input>
+    </div>
+    <a routerLink="/user/auth/forgotpassword">{{forgotPass}}</a><br />
+    <a routerLink="/user/auth/signin">{{signInText}}</a>
+    <div class="d-grid gap-2 mt-1">
+        <button class="btn btn-primary" type="button" (click)="localSingUp()">Create Account</button>
+    </div>
+</form>

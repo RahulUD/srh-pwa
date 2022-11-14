@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-
 enum MarqueeDirection {
   left = 'left',
   right = 'right',
@@ -28,7 +27,8 @@ export class MarqueeComponent implements OnInit {
 
   marqueeDirection = MarqueeDirection;
   marqueeSpeed = MarqueeSpeed;
-
   ngOnInit() {
   }
+
+  
 }

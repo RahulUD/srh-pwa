@@ -1,0 +1,26 @@
+.menu-container{
+    padding: 10px 10px 0px 10px;
+    width: 300px;
+}
+.profile{
+    position: relative;
+
+    .editprofile{
+        position: absolute;
+        bottom: 0;
+        right: 104px;
+    }
+}
+
+.profilethumb{
+    position: relative;
+}
+.bluetickthumb{
+    position: absolute;
+    bottom: 0;
+    right: 12px;
+}
+.profilecard{
+    background-image: url('./../../../assets/svg/profilewave.svg');
+    background-repeat: no-repeat;
+}

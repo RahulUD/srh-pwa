@@ -12,7 +12,7 @@ export class MostclickeditemComponent implements OnInit {
   @Input()
   blog!: { title: string; description: string; _id: string };
   constructor() {
-    this.colorArr = Object.values(colors)
+    this.colorArr = colors.darkColors
     this.color = this.colorArr[Math.floor(Math.random()* this.colorArr.length)]
    }
 

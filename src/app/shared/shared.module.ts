@@ -14,6 +14,8 @@ import { MarqueeComponent } from './marquee/marquee.component';
 import { SociallinksComponent } from './sociallinks/sociallinks.component';
 import { SocialItemComponent } from './sociallinks/social-item/social-item.component';
 import { DialogueComponent } from './core/dialogue/dialogue.component';
+import { AvatarComponent } from './avatar/avatar.component';
+import { UsermenuComponent } from './usermenu/usermenu.component';
 
 
 
@@ -31,6 +33,8 @@ import { DialogueComponent } from './core/dialogue/dialogue.component';
     SociallinksComponent,
     SocialItemComponent,
     DialogueComponent,
+    AvatarComponent,
+    UsermenuComponent,
     
 
   ],

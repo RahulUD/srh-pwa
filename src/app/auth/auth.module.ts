@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SocialLoginComponent } from './social-login/social-login.component';
 import { SharedModule } from '../shared/shared.module';
 import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
+import { AuthComponent } from './auth.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
     ChangepasswordComponent,
     SocialLoginComponent,
     ForgotPassComponent,
+    AuthComponent,
   ],
   imports: [CommonModule, AuthRoutingModule, ElementModule,ReactiveFormsModule, SharedModule],
 })

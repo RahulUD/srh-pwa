@@ -16,6 +16,7 @@ import { SocialItemComponent } from './sociallinks/social-item/social-item.compo
 import { DialogueComponent } from './core/dialogue/dialogue.component';
 import { AvatarComponent } from './avatar/avatar.component';
 import { UsermenuComponent } from './usermenu/usermenu.component';
+import { ResponseNotificationComponent } from './response-notification/response-notification.component';
 
 
 
@@ -35,6 +36,7 @@ import { UsermenuComponent } from './usermenu/usermenu.component';
     DialogueComponent,
     AvatarComponent,
     UsermenuComponent,
+    ResponseNotificationComponent,
     
 
   ],
@@ -52,6 +54,7 @@ import { UsermenuComponent } from './usermenu/usermenu.component';
     ToasterComponent,
     MarqueeComponent,
     SociallinksComponent,
+    ResponseNotificationComponent
   ]
 })
 export class SharedModule { }

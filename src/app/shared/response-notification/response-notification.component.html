@@ -1,0 +1,8 @@
+<div class="alert alert-dismissible d-flex align-items-center" role="alert" *ngIf="responseStatus?.message"
+    [ngClass]="responseStatus?.isSuccess ? 'alert-success' : 'alert-danger'">
+    <i class="bi "
+        [ngClass]="responseStatus?.isSuccess ? 'bi-check-circle-fill text-sucess':'text-danger bi-x-circle-fill'"></i> &nbsp;
+    <div>
+        {{responseStatus?.message}}
+    </div>
+</div>

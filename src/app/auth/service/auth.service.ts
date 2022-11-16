@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable, tap } from 'rxjs';
 import { LocalstorageService } from 'src/app/service/localstorage.service';
 import { environment } from 'src/environments/environment';
-import { baseUser, signUpFormData } from 'src/types/user';
+import { baseUser, forgotPasswordFormData, resetPasswordFormData, signUpFormData } from 'src/types/user';
 
 @Injectable({
   providedIn: 'root',
@@ -30,8 +30,14 @@ export class AuthService {
   singUp(signUpFormData : signUpFormData){
     return this.http.post<baseUser>(`${environment.endPoints.users}/signUp`,signUpFormData);
   }
+  forgotPassword(forgotPasswordFormData : forgotPasswordFormData){
+    return this.http.post<{status: number, message: string, isSuccess: boolean}>(`${environment.endPoints.users}/forgotPassword`,forgotPasswordFormData);
+  }
   logout(){
     this.authUserSubject.next(null)
     this.localStorageService.removeData(this.localStorageService.authuser)
+  }
+  resetPassword(resetPasswordFormData : resetPasswordFormData){
+    return this.http.post<{status: number, message: string, isSuccess: boolean}>(`${environment.endPoints.users}/resetPassword`,resetPasswordFormData);
   }
 }

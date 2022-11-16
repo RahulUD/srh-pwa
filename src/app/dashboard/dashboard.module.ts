@@ -9,7 +9,7 @@ import { DashboardhomeComponent } from './dashboardhome/dashboardhome.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreateBlogComponent } from './create-blog/create-blog.component';
 import { DashboardbloglistComponent } from './dashboardbloglist/dashboardbloglist.component';
-
+import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 
 @NgModule({
   declarations: [
@@ -24,6 +24,7 @@ import { DashboardbloglistComponent } from './dashboardbloglist/dashboardbloglis
     DashboardRoutingModule,
     SharedModule,
     ReactiveFormsModule,
+    MarkdownModule.forChild(),
   ]
 })
 export class DashboardModule { }

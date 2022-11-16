@@ -2,7 +2,8 @@ import { Component, OnInit , ViewEncapsulation} from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { blogMarkdown } from 'src/types/blog';
 import { Title, Meta } from '@angular/platform-browser';
-
+import { humanDate } from 'src/app/util/commonMethods';
+import { compareDate } from 'src/app/util/commonMethods';
 @Component({
   selector: 'app-blogdetail',
   templateUrl: './blogdetail.component.html',
@@ -11,6 +12,8 @@ import { Title, Meta } from '@angular/platform-browser';
 })
 export class BlogdetailComponent implements OnInit {
   blog!: blogMarkdown;
+  humanDate = humanDate
+  compareDate =compareDate
   constructor(
     private activatedRoute: ActivatedRoute,
     private title: Title,

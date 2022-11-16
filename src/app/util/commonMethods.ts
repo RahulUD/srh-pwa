@@ -1,3 +1,4 @@
+import * as ago from 's-ago';
 export const findAndUplateObjArr = (array: any, obj: any, property: string) => {
   const arrCopy = [...array];
   arrCopy.map((item) => {
@@ -8,3 +9,9 @@ export const findAndUplateObjArr = (array: any, obj: any, property: string) => {
   });
   return arrCopy;
 };
+export const humanDate = (dateTime: string) => {
+  return ago(new Date(dateTime));
+};
+export const compareDate = (date1 : string, date2: string) =>{
+  return date1 === date2
+}

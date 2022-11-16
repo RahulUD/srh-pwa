@@ -34,6 +34,7 @@ export class ForgotPassComponent implements OnInit {
   forgotPassword = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
   });
+
   forgotPasswordHandler() {
     if (this.forgotPassword.valid) {
       this.isProcessing = true;

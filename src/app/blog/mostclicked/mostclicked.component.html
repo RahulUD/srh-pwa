@@ -1,9 +1,5 @@
-<div class="rounded-3 shadow-lg most-clicked">
-    <div class="container-fluid">
-        <div class="container-fluid py-2">
-            <div class="d-flex align-content-center justify-content-center flex-wrap">
-                <blog-mostclickeditem *ngFor="let blog of blogs" [blog]="blog"></blog-mostclickeditem>
-            </div>
-        </div>
+<div class="rounded-3 most-clicked">
+    <div class="d-flex align-content-center justify-content-center flex-wrap">
+        <blog-mostclickeditem *ngFor="let blog of blogs" [blog]="blog"></blog-mostclickeditem>
     </div>
 </div>

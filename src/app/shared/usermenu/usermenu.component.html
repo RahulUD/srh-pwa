@@ -1,17 +1,18 @@
 <div class="dropdown" *ngIf="authService.isLoggedIn$ | async; else login" [title]="user?.name">
-    <div class="dropdown-toggle d-flex align-items-center h-100 profilethumb" data-bs-toggle="dropdown" aria-expanded="false">
+    <div class="dropdown-toggle d-flex align-items-center h-100 profilethumb" data-bs-toggle="dropdown"
+        aria-expanded="false" data-bs-auto-close="outside">
         <srh-avatar customclass="circle white-2-border" [avatar]="user?.avatar" dimension="40x40"></srh-avatar>
-        <i class="bi bi-patch-check-fill bluetickthumb text-dark"></i>
+        <i class="bi bi-patch-check-fill bluetickthumb text-dark" *ngIf="user?.verified"></i>
     </div>
-    <ul class="dropdown-menu dropdown-menu-end profilecard">
+    <div class="dropdown-menu dropdown-menu-end profilecard">
         <div class="menu-container">
             <div class="mt-3 d-flex justify-content-center profile">
                 <srh-avatar customclass="circle white-2-border" [avatar]="user?.avatar" dimension="80x80"></srh-avatar>
-                <i class="bi bi-cloud-upload-fill editprofile text-warning fs-5"></i>
+                <!-- <i class="bi bi-cloud-upload-fill editprofile text-dark fs-5" (click)="fileUpload.click()"></i> -->
             </div>
             <div class="d-flex flex-column align-items-center mt-3">
                 <div>
-                    <h6>{{user?.name}} <i class="bi bi-patch-check-fill text-primary"></i></h6>
+                    <h6>{{user?.name}} <i class="bi bi-patch-check-fill text-primary" *ngIf="user?.verified"></i></h6>
                 </div>
                 <div class="text-muted">{{user?.email}}</div>
             </div>
@@ -37,9 +38,11 @@
                 Privacy policy • Terms of service
             </div>
         </div>
-    </ul>
+    </div>
 </div>
 <ng-template #login>
     <div class="text-light login mt-2" routerLink="/user/auth/signin">Login/ Register
     </div>
 </ng-template>
+
+<!-- <input type="file" #fileUpload [hidden]="true"> -->

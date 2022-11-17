@@ -7,7 +7,7 @@ export const environment = {
   production: false,
   appVersion: require('../../package.json').version,
   appEnvironment: 'Dev',
-  appName : 'checkMy Result',
+  appName : 'sarkariresulthub.in',
   endPoints: generateEndpoints(baseUrl),
   firebase : {
     apiKey: "AIzaSyDlvdhxuswVRHoDCjQrbxijYD_ySHbazIA",

@@ -6,10 +6,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./blogitem.component.scss'],
 })
 export class BlogitemComponent implements OnInit {
-  icons = ['bi-caret-right-fill'];
   textClass = '';
   @Input()
-  blog!: { title: string; description: string; _id: string };
+  blog!: { title: string; description: string; _id: string, updatedAt: string };
   constructor() {}
 
   ngOnInit(): void {}

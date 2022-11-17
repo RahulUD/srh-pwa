@@ -23,29 +23,35 @@
         </div>
         <div class="mb-3">
             <ul class="nav nav-tabs">
-                <li class="nav-item" (click)="previewHandle(false)">
-                    <a class="nav-link" [ngClass]="preview ? '': 'active'" aria-current="page">Edit <i class="bi bi-pencil-square"></i></a>
+                <li class="nav-item" (click)="previewHandle('1')">
+                    <a class="nav-link" [ngClass]="preview === '1' ? 'active': ''" aria-current="page">Edit <i class="bi bi-pencil-square"></i></a>
                 </li>
-                <li class="nav-item"  (click)="previewHandle(true)">
-                    <a class="nav-link" [ngClass]="preview ? 'active': ''">Preview <i class="bi bi-eye-fill"></i></a>
+                <li class="nav-item"  (click)="previewHandle('2')">
+                    <a class="nav-link" [ngClass]="preview  === '2'? 'active': ''">Preview <i class="bi bi-eye-fill"></i></a>
+                </li>
+                <li class="nav-item"  (click)="previewHandle('3')">
+                    <a class="nav-link" [ngClass]="preview === '3'? 'active': ''">stackedit <i class="bi bi-braces-asterisk"></i></a>
                 </li>
             </ul>
-            <div *ngIf="!preview">    
-                <a href="https://stackedit.io/app#" target="_blank">Online editor</a>
+            <div *ngIf="preview === '1'">    
+                <!-- <a href="https://stackedit.io/app#" target="_blank">https://stackedit.io/app#</a> -->
                 <textarea formControlName="markdown" class="form-control" rows="25"></textarea>
             </div>
-            <div>
+            <div *ngIf="preview === '2'">
                 <markdown [data]="blogForm.value.markdown ?? undefined" lineNumbers emoji katex clipboard mermaid>
                 </markdown>
             </div>
+            <div *ngIf="preview === '3'">
+                <iframe src="https://stackedit.io/app#" width="100%" height="800px" title="W3Schools Free Online Web Tutorials"></iframe>
+            </div>
             <!-- <blog-template></blog-template> -->
         </div>
-        <ng-container *ngTemplateOutlet="butgroup"></ng-container>
+        <!-- <ng-container *ngTemplateOutlet="butgroup"></ng-container> -->
     </form>
 </div>
 
 <ng-template #butgroup>
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end my-3">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-1 mb-2">
         <!-- <button class="btn btn-primary me-md-2" type="button">Preview <i class="bi bi-eye"></i></button> -->
         <button (click)="discardBlog()" class="btn btn-danger me-md-2" type="button">Discard <i class="bi bi-x-circle"></i></button>
         <button class="btn btn-success" type="button" (click)="save()">Save <i class="bi bi-hdd"></i></button>

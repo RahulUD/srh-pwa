@@ -7,6 +7,7 @@ export interface baseUser {
   date_of_birth?: Date;
   provider?: string;
   providerId?: string;
+  verified : boolean
 }
 export interface signUpFormData {
   name: string | null | undefined;

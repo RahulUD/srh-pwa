@@ -12,9 +12,9 @@
           <span *ngFor="let seoo of blog.seo" class="badge me-1 text-bg-primary seo"
             [routerLink]="['/blogs/getblogs', 'seo',seoo]">{{seoo}}</span>
         </div>
-        <div class="d-flex justify-content-between mt-3">
+        <div class="d-flex justify-content-between mt-2">
           <div>
-            <span class="text-muted created-at">{{compareDate(blog.createdAt, blog.updatedAt) ? 'created ' : 'Updated '}} {{humanDate(blog.createdAt)}}</span>
+            <span class="text-muted created-at">Updated {{humanDate(blog.createdAt)}}</span>
           </div>
           <div class="d-flex align-items-center">
             <span class="badge rounded-pill text-bg-success"> <i class="bi bi-eye-fill"></i> 555</span>

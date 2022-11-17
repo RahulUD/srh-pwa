@@ -15,7 +15,7 @@ export class CreateBlogComponent implements OnInit {
   blogs!: any;
   seos:string[] = []
   blogTypes!: any
-  preview = false
+  preview = '1'
   ngOnInit(): void {
     this.categoryService.getCategories({params:{cat1: "BlogType"}}).subscribe(res=>this.blogTypes = res)
   }
@@ -45,7 +45,7 @@ export class CreateBlogComponent implements OnInit {
       this.blogForm.controls.seo.setValue('')
     }
   }
-  previewHandle(isPreview: boolean){
+  previewHandle(isPreview: string){
     this.preview = isPreview
   }
 }

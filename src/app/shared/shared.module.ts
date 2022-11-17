@@ -17,6 +17,7 @@ import { DialogueComponent } from './core/dialogue/dialogue.component';
 import { AvatarComponent } from './avatar/avatar.component';
 import { UsermenuComponent } from './usermenu/usermenu.component';
 import { ResponseNotificationComponent } from './response-notification/response-notification.component';
+import { IconComponent } from './icon/icon.component';
 
 
 
@@ -37,6 +38,7 @@ import { ResponseNotificationComponent } from './response-notification/response-
     AvatarComponent,
     UsermenuComponent,
     ResponseNotificationComponent,
+    IconComponent,
     
 
   ],
@@ -54,7 +56,8 @@ import { ResponseNotificationComponent } from './response-notification/response-
     ToasterComponent,
     MarqueeComponent,
     SociallinksComponent,
-    ResponseNotificationComponent
+    ResponseNotificationComponent,
+    IconComponent
   ]
 })
 export class SharedModule { }

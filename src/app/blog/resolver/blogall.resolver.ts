@@ -12,7 +12,7 @@ import { BlogsService } from 'src/app/service/blogs.service';
 })
 export class BlogallResolver implements Resolve<boolean> {
   constructor(private blogsService: BlogsService) {}
-  requestObj = {limit: 25, page: 1, fields : '_id,title,description'}
+  requestObj = {limit: 25, page: 1, fields : '_id,title,description,updatedAt'}
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
     let result = this.blogsService.getBlogs({
       params: { ...this.requestObj,value: 'Results' },

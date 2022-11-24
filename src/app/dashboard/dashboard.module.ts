@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CreateBlogComponent } from './create-blog/create-blog.component';
 import { DashboardbloglistComponent } from './dashboardbloglist/dashboardbloglist.component';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
+import { MediaComponent } from './media/media.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
     CategoryComponent,
     DashboardhomeComponent,
     CreateBlogComponent,
-    DashboardbloglistComponent
+    DashboardbloglistComponent,
+    MediaComponent
   ],
   imports: [
     CommonModule,

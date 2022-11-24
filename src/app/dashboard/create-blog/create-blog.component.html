@@ -2,7 +2,7 @@
     <form [formGroup]="blogForm">
         <ng-container *ngTemplateOutlet="butgroup"></ng-container>
         <div class="mb-3">
-            <input  formControlName="title" type="text" class="form-control" placeholder="Title ....">
+            <input formControlName="title" type="text" class="form-control" placeholder="Title ....">
         </div>
         <div class="mb-3">
             <textarea formControlName="description" class="form-control" rows="2"></textarea>
@@ -10,30 +10,39 @@
         <div class="mb-3">
             <!-- <label for="exampleDataList" class="form-label">Datalist example</label> -->
             <div class="d-flex">
-                <input formControlName="seo" (keydown)="addSeo($event)" class="form-control me-md-2" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                <input formControlName="seo" (keydown)="addSeo($event)" class="form-control me-md-2"
+                    list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
                 <select class="form-control" formControlName="category">
                     <option value="" disabled>Choose category...</option>
                     <option *ngFor="let blogType of blogTypes" [value]="blogType.title">{{blogType.title}}</option>
-                   
+
                 </select>
             </div>
             <div>
-                <span class="badge text-bg-primary py-1 px-2 mx-1 my-2" *ngFor="let item of seos; let i = index" >{{item}} &nbsp;<i class="bi bi-x-circle" (click)="discard(i)"></i></span>
+                <span class="badge text-bg-primary py-1 px-2 mx-1 my-2"
+                    *ngFor="let item of seos; let i = index">{{item}} &nbsp;<i class="bi bi-x-circle"
+                        (click)="discard(i)"></i></span>
             </div>
         </div>
         <div class="mb-3">
             <ul class="nav nav-tabs">
                 <li class="nav-item" (click)="previewHandle('1')">
-                    <a class="nav-link" [ngClass]="preview === '1' ? 'active': ''" aria-current="page">Edit <i class="bi bi-pencil-square"></i></a>
+                    <a class="nav-link" [ngClass]="preview === '1' ? 'active': ''" aria-current="page">Edit <i
+                            class="bi bi-pencil-square"></i></a>
                 </li>
-                <li class="nav-item"  (click)="previewHandle('2')">
-                    <a class="nav-link" [ngClass]="preview  === '2'? 'active': ''">Preview <i class="bi bi-eye-fill"></i></a>
+                <li class="nav-item" (click)="previewHandle('2')">
+                    <a class="nav-link" [ngClass]="preview  === '2'? 'active': ''">Preview <i
+                            class="bi bi-eye-fill"></i></a>
                 </li>
-                <li class="nav-item"  (click)="previewHandle('3')">
-                    <a class="nav-link" [ngClass]="preview === '3'? 'active': ''">stackedit <i class="bi bi-braces-asterisk"></i></a>
+                <li class="nav-item" (click)="previewHandle('3')">
+                    <a class="nav-link" [ngClass]="preview === '3'? 'active': ''">stackedit <i
+                            class="bi bi-braces-asterisk"></i></a>
+                </li>
+                <li class="nav-item" (click)="previewHandle('4')">
+                    <a class="nav-link" [ngClass]="preview === '4'? 'active': ''">Media <i class="bi bi-images"></i></a>
                 </li>
             </ul>
-            <div *ngIf="preview === '1'">    
+            <div *ngIf="preview === '1'">
                 <!-- <a href="https://stackedit.io/app#" target="_blank">https://stackedit.io/app#</a> -->
                 <textarea formControlName="markdown" class="form-control" rows="25"></textarea>
             </div>
@@ -42,7 +51,11 @@
                 </markdown>
             </div>
             <div *ngIf="preview === '3'">
-                <iframe src="https://stackedit.io/app#" width="100%" height="800px" title="W3Schools Free Online Web Tutorials"></iframe>
+                <iframe src="https://stackedit.io/app#" width="100%" height="800px"
+                    title="W3Schools Free Online Web Tutorials"></iframe>
+            </div>
+            <div *ngIf="preview === '4'">
+                <app-media> </app-media>
             </div>
             <!-- <blog-template></blog-template> -->
         </div>
@@ -53,7 +66,8 @@
 <ng-template #butgroup>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-1 mb-2">
         <!-- <button class="btn btn-primary me-md-2" type="button">Preview <i class="bi bi-eye"></i></button> -->
-        <button (click)="discardBlog()" class="btn btn-danger me-md-2" type="button">Discard <i class="bi bi-x-circle"></i></button>
+        <button (click)="discardBlog()" class="btn btn-danger me-md-2" type="button">Discard <i
+                class="bi bi-x-circle"></i></button>
         <button class="btn btn-success" type="button" (click)="save()">Save <i class="bi bi-hdd"></i></button>
     </div>
 </ng-template>

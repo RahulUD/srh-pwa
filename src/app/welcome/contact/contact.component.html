@@ -1,0 +1,68 @@
+<iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d556.9578771930576!2d86.25769667504584!3d25.596137633212564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f1ff9f658a3e7d%3A0xd9c967bab81d54e6!2sSeva%20sadan!5e1!3m2!1sen!2sin!4v1669289767648!5m2!1sen!2sin"
+    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+<div class="container-fluid">
+    <div class="row contact-form-container align-items-center">
+        <div class="col-md-6 col-lg-8  col-12">
+
+
+
+
+
+            <div class="card address-card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Head office Address :</h5>
+                    <p class="card-text">sarkariresulthub.in, near mazar<br> ward no 9, bakhri bazar<br>
+                        begusrai, Bihar pin - 848201</p>
+                </div>
+            </div>
+
+
+
+            <div class="card mt-4 address-card">
+                <div class="card-body">
+                    <p class="card-text">Email : rahul.adsps@gmail.com <br> Contact : 9479422951, 6394747341</p>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <h3 class="card-header">We are Developers </h3>
+                <div class="card-body">
+                    <h5 class="card-title"><u>Website and App development</u></h5>
+                    <p class="card-text">
+                        We can help you build your dream app/ web app. sarkariresulthub is an award winning website design and development company in India. Built your dream website with different technologies - Angular react Php and HTML and many more.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-6 col-12 col-lg-4 card p-4 my-3 form-opacity">
+            <h3 class="text-center text-light fs-3">Contact Us</h3>
+            <form [formGroup]="contactForm" (ngSubmit)="submitContact()">
+                <div class="mb-3">
+                    <srh-input name="name" lebelClass="lebel-white-bold" inputLevel='Name' inputType='text'
+                        [isDissabled]=false classes="form-control" [control]="contactForm.controls.name"></srh-input>
+                </div>
+                <div class="mb-3">
+                    <srh-input name="email" inputLevel='Email' lebelClass="lebel-white-bold" inputType='email'
+                        [isDissabled]=false classes="form-control" [control]="contactForm.controls.email"></srh-input>
+                </div>
+                <div class="mb-3">
+                    <srh-input name="phone" inputLevel='Phone Number' lebelClass="lebel-white-bold" inputType='number'
+                        [isDissabled]=false classes="form-control" [control]="contactForm.controls.phone"></srh-input>
+                </div>
+
+                <div class="mb-3">
+                    <srh-input name="message" inputLevel='Message' lebelClass="lebel-white-bold" inputType='textarea'
+                        rows="5" [isDissabled]=false classes="form-control" [control]="contactForm.controls.message">
+                    </srh-input>
+                </div>
+
+                <div class="d-grid gap-2 mt-2">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

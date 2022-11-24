@@ -3,6 +3,7 @@ export const generateEndpoints = (baseUrl: string) => {
     blogs: `${baseUrl}blogs`,
     categories: `${baseUrl}categories`,
     users: `${baseUrl}users`,
+    media : `${baseUrl}media`,
     // jobs: `${baseUrl}blogs`,
     // login: `${baseUrl}users/signIn`,
     // forgotPassword: `${baseUrl}users/forgotPassword`,

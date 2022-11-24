@@ -5,6 +5,7 @@ import { CreateBlogComponent } from './create-blog/create-blog.component';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardbloglistComponent } from './dashboardbloglist/dashboardbloglist.component';
 import { DashboardhomeComponent } from './dashboardhome/dashboardhome.component';
+import { MediaComponent } from './media/media.component';
 import { AllblogsResolver } from './resolver/allblogs.resolver';
 import { CategoryResolver } from './resolver/category.resolver';
 
@@ -14,6 +15,7 @@ const routes: Routes = [
     {path : 'categories', component : CategoryComponent, resolve: {
       categiries: CategoryResolver,
     },},
+    {path : 'media', component : MediaComponent},
     {path : 'blogs/create', component : CreateBlogComponent},
     {path : 'blogs/list', component : DashboardbloglistComponent, resolve : {
       blogs: AllblogsResolver

@@ -50,7 +50,8 @@
               "./node_modules/clipboard/dist/clipboard.min.js",
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/bootstrap-markdown/js/bootstrap-markdown.js",
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "src/assets/script/missionary.js"
             ]
           },
           "configurations": {

@@ -18,6 +18,7 @@ import { AvatarComponent } from './avatar/avatar.component';
 import { UsermenuComponent } from './usermenu/usermenu.component';
 import { ResponseNotificationComponent } from './response-notification/response-notification.component';
 import { IconComponent } from './icon/icon.component';
+import { DragDropFileUploadDirective } from './directive/drag-drop-file-upload.directive';
 
 
 
@@ -39,6 +40,7 @@ import { IconComponent } from './icon/icon.component';
     UsermenuComponent,
     ResponseNotificationComponent,
     IconComponent,
+    DragDropFileUploadDirective,
     
 
   ],
@@ -57,7 +59,8 @@ import { IconComponent } from './icon/icon.component';
     MarqueeComponent,
     SociallinksComponent,
     ResponseNotificationComponent,
-    IconComponent
+    IconComponent,
+    DragDropFileUploadDirective
   ]
 })
 export class SharedModule { }

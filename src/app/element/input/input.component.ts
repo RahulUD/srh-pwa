@@ -17,6 +17,9 @@ export class InputComponent {
   name!: string;
 
   @Input()
+  lebelClass!: string;
+
+  @Input()
   inputLevel!: string;
 
   @Input()
@@ -43,8 +46,13 @@ export class InputComponent {
   @Input()
   validationMessages!: [string];
 
+  @Input()
+  rows!: string
+
   @Output()
   inputValue = new EventEmitter<{fieldName: string, fieldValue : any}>();
+
+  
 
   errorMessages : Record<string, string> = {
     required  : 'The field is required',
@@ -54,5 +62,9 @@ export class InputComponent {
   displayErrors (){
     const {dirty, touched, errors} = this.control
     return dirty && touched && errors
+  }
+  isPlainType(type: string){
+    const plainTypes = [ 'email','text','password' , 'number']
+    return plainTypes.includes(type)
   }
 }

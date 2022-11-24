@@ -1,11 +1,19 @@
-<label [for]="name" class="form-label" [ngClass]="{'lebel-error' : displayErrors()}">{{inputLevel}}</label>
-<input [formControl]="control" *ngIf="inputType!=='checkbox'" [type]="inputType" [disabled]="isDissabled"
-    [ngStyle]="{style}" [class]="classes" [ngClass]="{'input-error' : displayErrors()}" [id]="name"
-    [attr.aria-label]="ariaDescribedby">
+<label [for]="name" class="form-label" [class]="lebelClass" [ngClass]="{'lebel-error' : displayErrors()}">{{inputLevel}}</label>
+
+<textarea [formControl]="control" *ngIf="inputType==='textarea'" [disabled]="isDissabled" [ngStyle]="{style}"
+   [rows]="rows" [class]="classes" [ngClass]="{'input-error' : displayErrors()}" [id]="name" [attr.aria-label]="ariaDescribedby">
+
+</textarea>
+
+<input [formControl]="control" *ngIf="isPlainType(inputType)" [type]="inputType" [disabled]="isDissabled" [ngStyle]="{style}"
+    [class]="classes" [ngClass]="{'input-error' : displayErrors()}" [id]="name" [attr.aria-label]="ariaDescribedby">
+
 <input [formControl]="control" *ngIf="inputType==='checkbox'" type="checkbox" [disabled]="isDissabled"
     [ngStyle]="{style}" [class]="classes" [ngClass]="{'input-error' : displayErrors()}" [id]="name"
     [attr.aria-label]="ariaDescribedby">
+
 <div class="form-text">{{helpText}}</div>
+
 <ng-container *ngIf="displayErrors()">
     <div class="badge rounded-pill text-bg-danger" *ngFor="let err of control.errors | keyvalue">{{
         errorMessages[err.key] }}</div>

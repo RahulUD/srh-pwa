@@ -37,6 +37,7 @@ export class MediaComponent implements OnInit {
     });
   }
   copyToClipboard(path: string) {
+    console.log("path", path)
     this.clipBoardService.copyToClipboard(path);
   }
 }

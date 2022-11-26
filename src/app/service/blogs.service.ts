@@ -26,4 +26,7 @@ export class BlogsService {
   toggleHot(id: string){
     return this.http.get<baseBlog>(`${environment.endPoints.blogs}/hotblog/toggle/${id}`);
   }
+  update(formData: any){
+    return this.http.patch<baseBlog>(`${environment.endPoints.blogs}/${formData._id}`, formData);
+  }
 }

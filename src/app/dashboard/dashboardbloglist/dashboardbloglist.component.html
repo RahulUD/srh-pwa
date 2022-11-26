@@ -6,7 +6,7 @@
             </div>
             <div class="d-flex justify-content-evenly">
                 <i class="bi bi-trash-fill text-danger " (click)="delete(blog._id)"></i>
-                <i class="bi bi-pencil-square text-primary"></i>
+                <i class="bi bi-pencil-square text-primary"  [routerLink]="['/dashboard/blogs/create', blog._id]"></i>
                 <!-- <i class="bi bi-clipboard"></i> -->
                 <i class="bi bi-fire text-secondary" [ngClass]="{'text-success': blog.isHot}" (click)="toggleHot(blog._id)"></i>
             </div>

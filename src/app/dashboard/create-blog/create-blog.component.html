@@ -65,9 +65,12 @@
 
 <ng-template #butgroup>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-1 mb-2">
-        <!-- <button class="btn btn-primary me-md-2" type="button">Preview <i class="bi bi-eye"></i></button> -->
         <button (click)="discardBlog()" class="btn btn-danger me-md-2" type="button">Discard <i
                 class="bi bi-x-circle"></i></button>
-        <button class="btn btn-success" type="button" (click)="save()">Save <i class="bi bi-hdd"></i></button>
+        <button class="btn btn-primary me-md-2" type="button" (click)="updateBlog()" *ngIf="blog; else create">Update <i
+                class="bi bi-eye"></i></button>
+        <ng-template #create>
+            <button class="btn btn-success" type="button" (click)="save()">Save <i class="bi bi-hdd"></i></button>
+        </ng-template>
     </div>
 </ng-template>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BlogResolver } from '../blog/resolver/blog.resolver';
 import { CategoryComponent } from './category/category.component';
 import { CreateBlogComponent } from './create-blog/create-blog.component';
 import { DashboardComponent } from './dashboard.component';
@@ -16,7 +17,9 @@ const routes: Routes = [
       categiries: CategoryResolver,
     },},
     {path : 'media', component : MediaComponent},
-    {path : 'blogs/create', component : CreateBlogComponent},
+    {path : 'blogs/create/:id', component : CreateBlogComponent,  resolve: {
+      blogs: BlogResolver,
+    },},
     {path : 'blogs/list', component : DashboardbloglistComponent, resolve : {
       blogs: AllblogsResolver
     }},

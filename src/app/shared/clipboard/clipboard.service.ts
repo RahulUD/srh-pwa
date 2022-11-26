@@ -8,6 +8,7 @@ export class ClipboardService {
   constructor(private toastService: ToastService) {}
 
   copyToClipboard(copyText: string) {
+    this.toastService.showSuccessToast(copyText)
     navigator.clipboard
       .writeText(copyText)
       .then(() => this.toastService.showSuccessToast(copyText));

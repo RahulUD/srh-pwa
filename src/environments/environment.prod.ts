@@ -1,7 +1,7 @@
 import { generateEndpoints } from "./endPoints";
 declare const require : any;
 
-const baseUrl = 'http://157.245.110.192/:8000/'
+const baseUrl = 'http://157.245.110.192:8000/'
 export const environment = {
   production: false,
   appVersion: require('../../package.json').version,

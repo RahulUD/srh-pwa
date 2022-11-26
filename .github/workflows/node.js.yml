@@ -27,5 +27,5 @@ jobs:
         cache: 'npm'
     - run: npm i
     - run: npm run build 
-    - run: sudo rm -r /var/www/html/*
+    # - run: sudo rm -r /var/www/html/*
     - run: sudo mv /home/rahul/pwa-runner/_work/srh-pwa/srh-pwa/dist/pwa/* /var/www/html/ 

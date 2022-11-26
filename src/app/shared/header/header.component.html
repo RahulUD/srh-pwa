@@ -3,7 +3,8 @@
 
     <app-logo></app-logo>
 
-    <button class="navbar-toggler" aria-controls="staticBackdrop" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+    <button class="navbar-toggler" aria-controls="staticBackdrop" type="button" data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar"
@@ -15,7 +16,7 @@
         </button>
       </div>
       <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" data-bs-dismiss="offcanvas" aria-label="Close">
           <!-- <li class="nav-item">
             <a class="nav-link" aria-current="about" routerLink="/welcome/aboutus">About <i class="bi bi-shop-window"></i></a>
           </li> -->
@@ -24,7 +25,24 @@
           </li>
 
         </ul>
-        <user-menu></user-menu>
+        <div class="dropdown d-none d-lg-block " *ngIf="authService.isLoggedIn$ | async; else login"
+          [title]="user?.name">
+          <div class="dropdown-toggle d-flex align-items-center h-100 profilethumb" data-bs-toggle="dropdown"
+            aria-expanded="false" data-bs-auto-close="outside">
+            <srh-avatar customclass="circle white-2-border" [avatar]="user?.avatar" dimension="40x40"></srh-avatar>
+            <i class="bi bi-patch-check-fill bluetickthumb text-dark" *ngIf="user?.verified"></i>
+          </div>
+          <div class="dropdown-menu dropdown-menu-end profilecard ">
+            <user-menu></user-menu>
+          </div>
+        </div>
+        <div class="d-block d-lg-none d-xl-none s-xxl-none">
+          <user-menu></user-menu>
+        </div>
+        <ng-template #login>
+          <div class="text-light login mt-2 cursor-pointer" routerLink="/user/auth/signin">Login/ Register
+          </div>
+        </ng-template>
       </div>
     </div>
   </div>

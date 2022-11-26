@@ -1,14 +1,40 @@
 <header class="navbar navbar-dark bg-primary sticky-top flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6">
-        <app-logo></app-logo>
-    </a>
-    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
-        data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <!-- <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search"
-        aria-label="Search"> -->
-    <div class="mx-4">
-        <user-menu></user-menu>
+  <button class="navbar-toggler d-block d-sm-block d-md-none ms-4" type="button" data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasSidebar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="offcanvas offcanvas-start text-bg-dark" id="offcanvasSidebar" data-bs-backdrop="static" keyboard="true">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasNavbarLabel">{{this.sharedService.appName}}</h5>
+      <button type="button btn-danger" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="bi bi-x-lg"></i>
+      </button>
     </div>
+    <div class="offcanvas-body">
+      <dashboard-sidebar data-bs-dismiss="offcanvas" aria-label="Close"></dashboard-sidebar>
+    </div>
+  </div>
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6">
+    <app-logo></app-logo>
+  </a>
+
+  <!-- <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search"
+        aria-label="Search"> -->
+  <div class="mx-4">
+    <button class="navbar-toggler d-block d-sm-block d-md-none " type="button" data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasuermenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end text-bg-dark" id="offcanvasuermenu" data-bs-backdrop="static" keyboard="true">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">{{this.sharedService.appName}}</h5>
+        <button type="button btn-danger" data-bs-dismiss="offcanvas" aria-label="Close">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <user-menu data-bs-dismiss="offcanvas" aria-label="Close"></user-menu>
+      </div>
+    </div>
+  </div>
 </header>

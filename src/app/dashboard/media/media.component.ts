@@ -21,6 +21,8 @@ export class MediaComponent implements OnInit {
     private toastService: ToastService
   ) {}
 
+  
+
   ngOnInit(): void {
     this.medisService.getMedias().subscribe((res) => {
       this.medias = res;
@@ -37,7 +39,6 @@ export class MediaComponent implements OnInit {
     });
   }
   copyToClipboard(path: string) {
-    console.log("path", path)
     this.clipBoardService.copyToClipboard(path);
   }
 }

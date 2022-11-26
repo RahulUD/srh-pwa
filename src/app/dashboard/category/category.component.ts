@@ -61,7 +61,7 @@ export class CategoryComponent implements OnInit {
   saveCategory() {
     this.categoryService
       .postCategory(this.categotyForm.value)
-      .subscribe((res) => (this.categories = res));
+      .subscribe((res) => {this.categories = res; this.categotyForm.reset()});
   }
   deleteCategory(id: string){
     this.categoryService

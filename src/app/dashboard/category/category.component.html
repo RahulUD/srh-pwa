@@ -12,7 +12,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let category of categories" >
+        <tr *ngFor="let category of categories">
             <td>{{category.title}}</td>
             <td>{{category.cat1}}</td>
             <td>{{category.cat2}}</td>
@@ -40,31 +40,45 @@
                 <textarea class="form-control" formControlName="description" placeholder="Your description here ..."
                     rows="3"></textarea>
             </div>
+
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Category</label>
-                <select class="form-select" aria-label="Default select example" formControlName="cat1">
+                <input list="cat1s" name="cat1" id="cat1" type="text" formControlName="cat1" class="form-control"
+                    placeholder="Your cat1 here ....">
+                <datalist id="cat1s">
+                    <option [value]="cat.cat1" *ngFor="let cat of (categories1$ | async )">
+                </datalist>
+                <!-- <select class="form-select" aria-label="Default select example" formControlName="cat1">
                     <option selected disabled>Select ..</option>
                     <option [value]="cat.cat1" *ngFor="let cat of (categories1$ | async )">{{cat.cat1}}</option>
-                </select>
+                </select> -->
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Sub Category</label>
-                <select class="form-select" aria-label="Default select example" formControlName="cat2">
+                <input  list="cat2s" name="cat2" type="text" formControlName="cat2" class="form-control" placeholder="Your cat1 here ....">
+                <datalist id="cat2s">
+                    <option [value]="cat.cat2" *ngFor="let cat of (categories2$ | async )">
+                  </datalist>
+                <!-- <select class="form-select" aria-label="Default select example" formControlName="cat2">
                     <option selected disabled>Select ..</option>
                     <option [value]="cat.cat2" *ngFor="let cat of (categories2$ | async )">{{cat.cat2}}</option>
-                </select>
+                </select> -->
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Sub Category 2</label>
-                <select class="form-select" aria-label="Default select example" formControlName="cat3">
+                <input list="cat3s" type="text" formControlName="cat3" class="form-control" placeholder="Your cat1 here ....">
+                <datalist id="cat3s">
+                    <option [value]="cat.cat3" *ngFor="let cat of (categories3$ | async )">
+                  </datalist>
+                <!-- <select class="form-select" aria-label="Default select example" formControlName="cat3">
                     <option selected disabled>Select ..</option>
                     <option [value]="cat.cat3" *ngFor="let cat of (categories3$ | async )">{{cat.cat3}}</option>
-                </select>
+                </select> -->
             </div>
         </form>
     </div>
     <div class="modal-footer" modelFooter>
-        <button class="btn btn-primary" (click)="saveCategory()" data-bs-target="#addCategory" data-bs-toggle="modal">Back to
-            first</button>
+        <button class="btn btn-primary" (click)="saveCategory()" data-bs-target="#addCategory"
+            data-bs-toggle="modal">Submit</button>
     </div>
 </app-model>

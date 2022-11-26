@@ -10,22 +10,22 @@
                 <srh-avatar customclass="circle white-2-border" [avatar]="user?.avatar" dimension="80x80"></srh-avatar>
                 <!-- <i class="bi bi-cloud-upload-fill editprofile text-dark fs-5" (click)="fileUpload.click()"></i> -->
             </div>
-            <div class="d-flex flex-column align-items-center mt-3">
+            <div class="d-flex flex-column align-items-center mt-3 cur-default">
                 <div>
                     <h6>{{user?.name}} <i class="bi bi-patch-check-fill text-primary" *ngIf="user?.verified"></i></h6>
                 </div>
-                <div class="text-muted">{{user?.email}}</div>
+                <div class="text-muted cur-default">{{user?.email}}</div>
             </div>
             <ul class="list-group list-group-flush mt-4">
-                <li routerLink="/dashboard" class="list-group-item d-flex justify-content-between align-items-center">
+                <li routerLink="/dashboard" class="cur-pointer list-group-item d-flex justify-content-between align-items-center">
                     Dashboard
                     <i class="bi bi-speedometer"></i>
                 </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
+                <li class="cur-pointer list-group-item d-flex justify-content-between align-items-center">
                     Profile
                     <i class="bi bi-person-circle"></i>
                 </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
+                <li class="cur-pointer list-group-item d-flex justify-content-between align-items-center">
                     Settings
                     <i class="bi bi-gear-fill"></i>
                 </li>
@@ -34,14 +34,14 @@
                 <button class="btn btn-danger" type="button" (click)="logout()">Logout &nbsp; <i
                         class="bi bi-power"></i></button>
             </div>
-            <div class="text-center text-muted fs-6 text py-2">
+            <div class="text-center text-muted fs-6 text py-2 cur-pointer">
                 Privacy policy • Terms of service
             </div>
         </div>
     </div>
 </div>
 <ng-template #login>
-    <div class="text-light login mt-2" routerLink="/user/auth/signin">Login/ Register
+    <div class="text-light login mt-2 cursor-pointer" routerLink="/user/auth/signin">Login/ Register
     </div>
 </ng-template>
 

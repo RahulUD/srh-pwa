@@ -11,6 +11,12 @@
         right: 104px;
     }
 }
+.cur-pointer{
+    cursor: pointer;
+}
+.cur-default{
+    cursor: default;
+}
 
 .profilethumb{
     position: relative;
@@ -23,4 +29,7 @@
 .profilecard{
     background-image: url('./../../../assets/svg/profilewave.svg');
     background-repeat: no-repeat;
+}
+.cursor-pointer{
+    cursor: pointer;
 }

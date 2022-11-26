@@ -36,7 +36,7 @@
             <user-menu></user-menu>
           </div>
         </div>
-        <div class="d-block d-lg-none d-xl-none s-xxl-none">
+        <div class="d-block d-lg-none d-xl-none s-xxl-none"  *ngIf="authService.isLoggedIn$ | async">
           <user-menu></user-menu>
         </div>
         <ng-template #login>

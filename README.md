@@ -25,3 +25,22 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Deploying to digital ocean
+
+
+a.	Install nginx
+    i.	sudo apt update && sudo apt install nginx
+    ii.	sudo ufw app list && sudo ufw allow 'Nginx HTTP' && sudo ufw status
+    iii.	systemctl status nginx
+
+b.	Login to github
+c.	Go to actions  > Continuous integration > Node.js
+d.	Paste node.js.yml code to the new file
+ 
+e.	Add and commit the code
+f.	Now go to settings > actions > runners
+i.	Create a new selfhosted runner
+g.	After successfully creation of runner
+sudo ./svc.sh install &&
+sudo ./svc.sh start

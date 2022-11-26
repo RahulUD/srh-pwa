@@ -1,7 +1,7 @@
 import { generateEndpoints } from "./endPoints";
 declare const require : any;
 
-const baseUrl = 'http://localhost:8001/'
+const baseUrl = 'http://localhost:8000/'
 
 export const environment = {
   production: false,

@@ -1,14 +1,14 @@
 <label [for]="name" class="form-label" [class]="lebelClass" [ngClass]="{'lebel-error' : displayErrors()}">{{inputLevel}}</label>
 
-<textarea [formControl]="control" *ngIf="inputType==='textarea'" [disabled]="isDissabled" [ngStyle]="{style}"
+<textarea [formControl]="control" *ngIf="inputType==='textarea'"  [ngStyle]="{style}"
    [rows]="rows" [class]="classes" [ngClass]="{'input-error' : displayErrors()}" [id]="name" [attr.aria-label]="ariaDescribedby">
 
 </textarea>
 
-<input [formControl]="control" *ngIf="isPlainType(inputType)" [type]="inputType" [disabled]="isDissabled" [ngStyle]="{style}"
+<input [formControl]="control" *ngIf="isPlainType(inputType)" [type]="inputType"  [ngStyle]="{style}"
     [class]="classes" [ngClass]="{'input-error' : displayErrors()}" [id]="name" [attr.aria-label]="ariaDescribedby">
 
-<input [formControl]="control" *ngIf="inputType==='checkbox'" type="checkbox" [disabled]="isDissabled"
+<input [formControl]="control" *ngIf="inputType==='checkbox'" type="checkbox" 
     [ngStyle]="{style}" [class]="classes" [ngClass]="{'input-error' : displayErrors()}" [id]="name"
     [attr.aria-label]="ariaDescribedby">
 

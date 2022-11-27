@@ -13,7 +13,7 @@ import { MediaService } from './service/media.service';
 export class MediaComponent implements OnInit {
   fileName = '';
   medias!: mediaType[];
-  imageFormate = 'image/jpeg' || 'image/png';
+  imageFormate = 'image/jpeg' || 'image/jpg'  ;
   constructor(
     private http: HttpClient,
     private medisService: MediaService,

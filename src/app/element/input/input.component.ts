@@ -29,7 +29,7 @@ export class InputComponent {
   isDissabled!: boolean;
 
   @Input()
-  control = new FormControl()
+  control = new FormControl<any>({disabled: this.isDissabled})
 
   @Input()
   style!: {};

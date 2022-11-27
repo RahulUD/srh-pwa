@@ -53,6 +53,8 @@ export class LocalstorageService {
   }
 
   private decrypt(txtToDecrypt: string) {
-    return JSON.parse(txtToDecrypt);
+    if(txtToDecrypt){
+      return JSON.parse(txtToDecrypt);
+    }
   }
 }

@@ -4,13 +4,13 @@
     </app-marquee>
 </div>
 <div class="container">
-   
+
     <div class="my-2">
         <blog-mostclicked [blogs]="hots"></blog-mostclicked>
     </div>
 
     <div class="mt-4 mb-2">
-       <app-sociallinks></app-sociallinks>
+        <app-sociallinks></app-sociallinks>
     </div>
 
 
@@ -28,6 +28,8 @@
 </div>
 <ng-template #marqueeContent>
     <div>
-        <span *ngFor="let item of marqueeData" class="py-1 badge text-danger m-1 marquee-item"><span [routerLink]="['/blogs/getblogs', 'seo',item.title]"><b [style]="{color: getColor()}">{{item.title}}</b></span></span>
+        <span *ngFor="let item of marqueeData" class="py-1 badge text-danger m-1 marquee-item"><span
+                [routerLink]="['/blogs/getblogs', 'seo',item.title]"><b
+                    [style]="{color: getColor()}">{{item.title}}</b></span></span>
     </div>
 </ng-template>

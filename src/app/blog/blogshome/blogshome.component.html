@@ -16,13 +16,16 @@
 
     <div class="row g-3 mb-4">
         <div class="col-lg-4 col-md-6">
-            <blogs icon="bi-briefcase-fill" (paginationEvent)="jobsPaginationEventHandler($event)" groupTitle="Latest Jobs" [blogs]="jobs" ></blogs>
+            <blogs icon="bi-briefcase-fill" (paginationEvent)="jobsPaginationEventHandler($event)"
+                groupTitle="Latest Jobs" [blogs]="jobs"></blogs>
         </div>
         <div class="col-lg-4 col-md-6">
-            <blogs icon="bi-person-badge-fill"  (paginationEvent)="admitcardPaginationEventHandler($event)" groupTitle="Admit Card" [blogs]="admitCards"></blogs>
+            <blogs icon="bi-person-badge-fill" (paginationEvent)="admitcardPaginationEventHandler($event)"
+                groupTitle="Admit Card" [blogs]="admitCards"></blogs>
         </div>
         <div class="col-lg-4 col-md-6">
-            <blogs icon="bi-list-columns-reverse" (paginationEvent)=" resultPaginationEventHandler($event)" groupTitle="Results" [blogs]="results"></blogs>
+            <blogs icon="bi-list-columns-reverse" (paginationEvent)=" resultPaginationEventHandler($event)"
+                groupTitle="Results" [blogs]="results"></blogs>
         </div>
     </div>
 </div>

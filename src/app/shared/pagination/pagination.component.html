@@ -1,4 +1,4 @@
-<nav aria-label="Page navigation example">
+<nav aria-label="Page navigation example" *ngIf="totalPages >1">
     <ul class="pagination justify-content-center" [ngClass]="paginationType == 2 ? 'pagination-sm' : ''">
         <!-- <li class="page-item">
             <a class="page-link" aria-label="Previous">

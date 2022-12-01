@@ -40,9 +40,10 @@ export class PaginationComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.totalPages =
+    this.totalPages = Math.ceil(
       Number(this.paginationConfig.totalItem) /
-      Number(this.paginationConfig.perPage);
+        Number(this.paginationConfig.perPage)
+    );
     this.pages = pagination(
       Number(this.paginationConfig.currentPage),
       this.totalPages,

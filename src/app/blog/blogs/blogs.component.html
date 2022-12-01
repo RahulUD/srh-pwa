@@ -8,5 +8,5 @@
         <span [routerLink]="['/blogs/getblogs', 'category',groupTitle]" class="see-all"> See all {{groupTitle}}
             ...</span>
     </div>
-    <srh-pagination paginationType="small" [paginationConfig]="paginationConfig" (paginationClickEvent)="jobsPaginationEventHandler($event)"></srh-pagination>
+    <srh-pagination [paginationType]=2 [paginationConfig]="paginationConfig" (paginationClickEvent)="paginationEventEmitter($event)"></srh-pagination>
 </div>

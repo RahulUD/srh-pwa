@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { paginationConfigType } from 'src/types/common';
 @Component({
   selector: 'blogs',
@@ -9,8 +9,9 @@ export class BlogsComponent implements OnInit, OnChanges {
   constructor() {}
   ngOnChanges(changes: SimpleChanges): void {
     this.paginationConfig = this.blogs.pagination
-    console.log('this.paginationConfig = this.blogs.pagination',this.paginationConfig)
   }
+  @Output()
+  paginationEvent = new EventEmitter<number>();
   @Input()
   icon!: string;
   @Input()
@@ -20,7 +21,7 @@ export class BlogsComponent implements OnInit, OnChanges {
   ngOnInit(): void {}
   paginationConfig!: paginationConfigType
 
-  jobsPaginationEventHandler(event: any){
-    console.log("emitted>>>>>>>>>>>>>>", event)
+  paginationEventEmitter(value: number) {
+    this.paginationEvent.emit(value);
   }
 }

@@ -1,10 +1,10 @@
 // Pagination  starts
 export enum paginationTypeEnum {
-  small = 'small',
-  standard = 'standard',
-  detailed = 'detailed',
+  small = 1,
+  standard = 2,
+  detailed = 3,
 }
-export type paginationTypeType = 'small' | 'standard' | 'detailed';
+export type paginationTypeType = 1 | 2 | 3;
 
 export interface paginationConfigType {
   totalItem: number;

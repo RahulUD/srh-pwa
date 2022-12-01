@@ -1,10 +1,12 @@
-<div class=" border-primary my-2 h-100 blogs"  >
-    <div class="blog-type bg-primary" [routerLink]="['/blogs/getblogs', 'category',groupTitle]"> {{groupTitle}} <i [ngClass]="icon" role="img" aria-label="GitHub"></i></div>
+<div class=" border-primary my-2 h-100 blogs">
+    <div class="blog-type bg-primary" [routerLink]="['/blogs/getblogs', 'category',groupTitle]"> {{groupTitle}} <i
+            [ngClass]="icon" role="img" aria-label="GitHub"></i></div>
     <div class="blogs-container">
-        <div *ngFor="let blog of blogs">
-            <blog-item  [blog]="blog"></blog-item>
+        <div *ngFor="let blog of blogs.data">
+            <blog-item [blog]="blog"></blog-item>
         </div>
-        <span [routerLink]="['/blogs/getblogs', 'category',groupTitle]" class="see-all"> See all {{groupTitle}} ...</span>
+        <span [routerLink]="['/blogs/getblogs', 'category',groupTitle]" class="see-all"> See all {{groupTitle}}
+            ...</span>
     </div>
+    <srh-pagination paginationType="small" [paginationConfig]="paginationConfig" (paginationClickEvent)="jobsPaginationEventHandler($event)"></srh-pagination>
 </div>
-

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {darkColors} from '../../util/colors';
+import { paginationConfigType } from 'src/types/common';
+import { darkColors } from '../../util/colors';
 @Component({
   selector: 'app-blogshome',
   templateUrl: './blogshome.component.html',
@@ -8,8 +9,11 @@ import {darkColors} from '../../util/colors';
 })
 export class BlogshomeComponent implements OnInit {
   jobs: any;
+  jobsPagination!: paginationConfigType;
   admitCards: any;
+  admitPagination!: paginationConfigType;
   results: any;
+  resultsPagination!: paginationConfigType;
   hots: any;
   marqueeData = [
     { title: 'UPSE' },
@@ -23,7 +27,7 @@ export class BlogshomeComponent implements OnInit {
     { title: 'Army' },
     { title: 'Airforce' },
   ];
-  colorArr: any
+  colorArr: any;
   constructor(private activatedRoute: ActivatedRoute) {
     this.colorArr = darkColors;
   }
@@ -33,11 +37,12 @@ export class BlogshomeComponent implements OnInit {
       this.jobs = blogs.latestJob;
       this.admitCards = blogs.admitCard;
       this.results = blogs.result;
-      this.hots = blogs.hots;
+      this.hots = blogs.hots.data;
     });
   }
 
   getColor() {
     return this.colorArr[Math.floor(Math.random() * this.colorArr.length)];
   }
+  
 }

@@ -19,8 +19,9 @@ import { UsermenuComponent } from './usermenu/usermenu.component';
 import { ResponseNotificationComponent } from './response-notification/response-notification.component';
 import { IconComponent } from './icon/icon.component';
 import { DragDropFileUploadDirective } from './directive/drag-drop-file-upload.directive';
-
-
+import { PaginationComponent } from './pagination/pagination.component';
+import { CountCardComponent } from './count-card-group/count-card/count-card.component';
+import { CountCardGroupComponent } from './count-card-group/count-card-group.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,9 @@ import { DragDropFileUploadDirective } from './directive/drag-drop-file-upload.d
     ResponseNotificationComponent,
     IconComponent,
     DragDropFileUploadDirective,
+    PaginationComponent,
+    CountCardComponent,
+    CountCardGroupComponent,
     
 
   ],
@@ -60,7 +64,9 @@ import { DragDropFileUploadDirective } from './directive/drag-drop-file-upload.d
     SociallinksComponent,
     ResponseNotificationComponent,
     IconComponent,
-    DragDropFileUploadDirective
+    DragDropFileUploadDirective,
+    PaginationComponent,
+    CountCardGroupComponent
   ]
 })
 export class SharedModule { }

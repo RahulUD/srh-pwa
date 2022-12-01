@@ -1,0 +1,13 @@
+<div class="card mb-2" (click)="cardClickEventEventEmitter(data)">
+    <div class="card-body" [class]="data.cardClass">
+        <div class="d-flex justify-content-between">
+            <div>
+                <h6 class="card-title">{{data.title}}</h6>
+                <p class="card-text fs-4">{{data.count}}</p>
+            </div>
+            <div>
+                <i class="bi" [class]="data.iconClasses"></i>
+            </div>
+        </div>
+    </div>
+</div>

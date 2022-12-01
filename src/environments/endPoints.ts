@@ -3,7 +3,7 @@ export const generateEndpoints = (baseUrl: string) => {
     blogs: `${baseUrl}blogs`,
     categories: `${baseUrl}categories`,
     users: `${baseUrl}users`,
-    media : `${baseUrl}media`,
+    media: `${baseUrl}media`,
     // jobs: `${baseUrl}blogs`,
     // login: `${baseUrl}users/signIn`,
     // forgotPassword: `${baseUrl}users/forgotPassword`,
@@ -13,5 +13,5 @@ export const generateEndpoints = (baseUrl: string) => {
     // like: `${baseUrl}likes`,
     // dislike: `${baseUrl}likes`,
     // comment: `${baseUrl}comments`,
-    
-  };};
+  };
+};

@@ -16,7 +16,7 @@ export class ListComponent implements OnInit {
       this.blogType = data['value'];
     });
     this.route.data.subscribe(blogs  => {
-      this.blogs = blogs['blogs']
+      this.blogs = blogs['blogs'].data
     });
   }
 }

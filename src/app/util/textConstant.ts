@@ -10,3 +10,6 @@ export const signIn = 'Sign In'
 export const rememberMe = 'Remember me !'
 export const forgotPassRes='forgotPassRes'
 export const resetPassRes = 'resetPassRes'
+
+// dashboard home
+export const totalBlogs = 'Total Blogs'

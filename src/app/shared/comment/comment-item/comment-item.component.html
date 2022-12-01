@@ -1,0 +1,8 @@
+<div class="shadow-sm px-4 py-2 mb-2">
+    <div class="d-flex flex-row user-info"><img class="rounded-circle" [src]="comment.user.avatar" width="40">
+        <div class="d-flex flex-column justify-content-start ml-2"><span class="d-block font-weight-bold name">{{comment.user.name}}</span><span class="date text-black-50">{{humanDate(comment.createdAt)}}</span></div>
+    </div>
+    <div class="mt-2">
+        <p class="comment-text">{{comment.comment}}</p>
+    </div>
+</div>

@@ -22,6 +22,10 @@ import { DragDropFileUploadDirective } from './directive/drag-drop-file-upload.d
 import { PaginationComponent } from './pagination/pagination.component';
 import { CountCardComponent } from './count-card-group/count-card/count-card.component';
 import { CountCardGroupComponent } from './count-card-group/count-card-group.component';
+import { CommentComponent } from './comment/comment.component';
+import { NewCommentComponent } from './comment/new-comment/new-comment.component';
+import { CommentItemComponent } from './comment/comment-item/comment-item.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -45,12 +49,14 @@ import { CountCardGroupComponent } from './count-card-group/count-card-group.com
     PaginationComponent,
     CountCardComponent,
     CountCardGroupComponent,
-    
-
+    CommentComponent,
+    NewCommentComponent,
+    CommentItemComponent,
   ],
   imports: [
     CommonModule,
-    SharedRoutingModule
+    SharedRoutingModule,
+    ReactiveFormsModule
   ],
   exports : [
     LogoComponent,
@@ -66,7 +72,8 @@ import { CountCardGroupComponent } from './count-card-group/count-card-group.com
     IconComponent,
     DragDropFileUploadDirective,
     PaginationComponent,
-    CountCardGroupComponent
+    CountCardGroupComponent,
+    CommentComponent
   ]
 })
 export class SharedModule { }

@@ -11,5 +11,6 @@ export interface baseBlog {
 export interface blogMarkdown extends baseBlog{
     markdown : string,
     seo : string[],
-    category : string
+    category : string,
+    view : string
 }

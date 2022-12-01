@@ -1,0 +1,8 @@
+    <div class="d-flex flex-row align-items-start">
+        <img class="rounded-circle" [src]="avatar" width="40">
+        <textarea  [formControl]="comment" class="form-control ml-1 shadow-none textarea"></textarea>
+    </div>
+    <div class="mt-2 d-flex justify-content-end">
+        <button class="btn btn-primary btn-sm shadow-none" type="button" (click)="commentSaveEventEmitter()">Post comment</button>
+        <button class="btn btn-outline-primary btn-sm ms-2 shadow-none" (click)="comment.reset()" type="button">Cancel</button>
+    </div>

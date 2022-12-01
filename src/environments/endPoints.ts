@@ -12,6 +12,6 @@ export const generateEndpoints = (baseUrl: string) => {
     // contact: `${baseUrl}contacts`,
     // like: `${baseUrl}likes`,
     // dislike: `${baseUrl}likes`,
-    // comment: `${baseUrl}comments`,
+    comment: `${baseUrl}comments/blog`,
   };
 };

@@ -13,8 +13,7 @@ import { baseBlog } from 'src/types/blog';
 })
 export class AllblogsResolver implements Resolve<baseBlog[]> {
   constructor(private blogsService: BlogsService){}
-  requestObj = {fields : '_id,title,description,isHot, isDeleted'}
-
+  requestObj = {limit: 25, page: 1, fields : '_id,title,description,updatedAt'}
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
     return this.blogsService.getBlogs({
       params: this.requestObj,

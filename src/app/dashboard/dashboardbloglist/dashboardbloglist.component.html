@@ -1,5 +1,5 @@
 <div class="row align-items-md-center">
-    <div class="d-flex flex-column align-items-start card mb-2 px-4 pt-2" *ngFor="let blog of blogs">
+    <div class="d-flex flex-column align-items-start card mb-2 px-4 pt-2" *ngFor="let blog of blogs.data">
         <div class="w-100 d-flex justify-content-between">
             <div>
                 <h4 class="fw-bold cursor-pointer"  [routerLink]="['/blogs/blogId', blog._id]">{{blog.title}}</h4>
@@ -13,4 +13,7 @@
         </div>
         <p class="text-muted">{{blog.description}} {{ blog.isHot}}</p>
     </div>
+    <srh-pagination [paginationType]=2
+    [paginationConfig]="blogs.pagination" (paginationClickEvent)="paginationEventHandler($event)">
+</srh-pagination>
 </div>

@@ -10,7 +10,7 @@ export const generateEndpoints = (baseUrl: string) => {
     // resetPassword: `${baseUrl}users/resetPassword`,
     // signup: `${baseUrl}users/signUp`,
     // contact: `${baseUrl}contacts`,
-    // like: `${baseUrl}likes`,
+    like: `${baseUrl}likes/blog`,
     // dislike: `${baseUrl}likes`,
     comment: `${baseUrl}comments/blog`,
   };

@@ -4,14 +4,19 @@
             <div class="d-flex flex-column comment-section">
                 <div class="bg-white">
                     <div class="d-flex flex-row fs-12">
-                        <div class="like p-2 cursor"><i class="bi bi-hand-thumbs-up-fill text-primary fs-5"></i><span
-                                class="ml-1">0110</span>
+                        <div class="like p-2 cursor">
+                            <button class="btn btn-primary btn-sm" (click)="likeclickHandler()" [disabled]="!user">
+                            <i class="bi  text-light"
+                                [ngClass]=" ifILiked() ? 'bi-hand-thumbs-up-fill' : 'bi-hand-thumbs-up'"
+                                >
+                            </i><span class="ml-1">{{likes?.length ?? 0}}</span>
+                        </button>
                         </div>
                         <div class="like p-2 cursor"><i class="bi bi-chat-left-dots-fill text-primary fs-5"></i><span
-                                class="ml-1"> {{comments.length}}</span>
+                                class="ml-1"> {{comments?.length}}</span>
                         </div>
-                        <div class="like p-2 cursor"><i class="bi bi-share-fill text-primary fs-5"></i><span
-                                class="ml-1"></span></div>
+                        <div class="like p-2 cursor"><a class="ml-1" href="https://facebook.com" target="_blank"> <i
+                                    class="bi bi-share-fill text-primary fs-5"></i></a></div>
                     </div>
                 </div>
                 <div class="bg-light p-2" *ngIf="user">

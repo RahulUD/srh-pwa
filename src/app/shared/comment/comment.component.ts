@@ -59,7 +59,7 @@ export class CommentComponent implements OnInit {
   }
   ifILiked() {
     if (this.user) {
-      return !!this.likes?.filter((like) => (like.user = this.user._id))[0];
+      return !!this.likes?.filter((like) => (like.user._id == this.user._id))[0];
     }
     return false;
   }

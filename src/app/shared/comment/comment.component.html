@@ -3,24 +3,25 @@
         <div class="col-md-">
             <div class="d-flex flex-column comment-section">
                 <div class="bg-white">
-                    <div class="d-flex flex-row fs-12">
-                        <div class="like p-2 cursor">
-                            <button class="btn btn-primary btn-sm" (click)="likeclickHandler()" [disabled]="!user">
-                            <i class="bi  text-light"
-                                [ngClass]=" ifILiked() ? 'bi-hand-thumbs-up-fill' : 'bi-hand-thumbs-up'"
-                                >
-                            </i><span class="ml-1">{{likes?.length ?? 0}}</span>
-                        </button>
+                    <div class="cursor d-flex align-items-center flex-row fs-12">
+                        <div class="like p-2 ">
+                            <button class="btn btn-light btn-sm" (click)="likeclickHandler()" [disabled]="!user">
+                                <i class="bi  text-primary fs-5"
+                                    [ngClass]=" ifILiked() ? 'bi-hand-thumbs-up-fill' : user ? 'bi-hand-thumbs-down-fill' : 'bi-hand-thumbs-up-fill' ">
+                                </i><span class="ml-1">&nbsp;{{likes?.length ?? 0}}</span>
+                            </button>
                         </div>
-                        <div class="like p-2 cursor"><i class="bi bi-chat-left-dots-fill text-primary fs-5"></i><span
-                                class="ml-1"> {{comments?.length}}</span>
+                        <div class="like p-2 cursor d-flex align-items-center"><i class="bi bi-chat-left-dots-fill text-primary fs-5"></i><span
+                                class="ml-1">&nbsp; {{comments?.length}}</span>
                         </div>
-                        <div class="like p-2 cursor"><a class="ml-1" href="https://facebook.com" target="_blank"> <i
+                        <div class="like p-2 cursor d-flex align-items-center"><a class="ml-1" href="https://facebook.com" target="_blank"> <i
                                     class="bi bi-share-fill text-primary fs-5"></i></a></div>
                     </div>
                 </div>
-                <div class="bg-light p-2" *ngIf="user">
-                    <new-comment [avatar]="user.avatar" (commentSaveClickEvent)="commentHandler($event)"></new-comment>
+                <div class="bg-light p-2">
+                    <new-comment *ngIf="user; else clickTologin" [avatar]="user.avatar" (commentSaveClickEvent)="commentHandler($event)"></new-comment>
+                    <ng-template #clickTologin><h6 class="text-danger">login to Like/ Comment on this blog</h6></ng-template>
+
                 </div>
                 <div class="bg-white p-2">
                     <comment-item *ngFor="let commentItem of comments" [comment]="commentItem"></comment-item>

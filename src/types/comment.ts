@@ -15,7 +15,7 @@ __v : string;
 
 export interface responseLikeType {
   _id : string;
-  user : string;
+  user : any;
   blog : string;
   createdAt : string;
   updatedAt : string;

@@ -6,17 +6,21 @@
             </a>
         </li> -->
         <li class="page-item">
-            <a class="page-link" aria-label="Previous" [ngClass]="paginationConfig.currentPage === 1 ? 'disabled': ''" (click)="paginationClickEventEmitter(paginationConfig.currentPage - 1)">
+            <a class="page-link" aria-label="Previous" [ngClass]="paginationConfig.currentPage === 1 ? 'disabled': ''"
+                (click)="paginationClickEventEmitter(paginationConfig.currentPage - 1)">
                 <i class="bi bi-caret-left-fill"></i>
             </a>
         </li>
 
-  <li class="page-item" *ngFor="let item of pages" [ngClass]="item.key === paginationConfig.currentPage ? 'active':''"><a class="page-link"
+        <li class="page-item cursor-pointer" *ngFor="let item of pages"
+            [ngClass]="item.key === paginationConfig.currentPage ? 'active':''"><a class="page-link"
                 (click)="paginationClickEventEmitter(item.val)">{{item.key}}
 
             </a></li>
         <li class="page-item">
-            <a class="page-link" aria-label="next"   (click)="paginationClickEventEmitter(paginationConfig.currentPage + 1)" [ngClass]="paginationConfig.currentPage === totalPages ? 'disabled': ''">
+            <a class="page-link" aria-label="next"
+                (click)="paginationClickEventEmitter(paginationConfig.currentPage + 1)"
+                [ngClass]="paginationConfig.currentPage === totalPages ? 'disabled': ''">
                 <i class="bi bi-caret-right-fill"></i>
             </a>
         </li>

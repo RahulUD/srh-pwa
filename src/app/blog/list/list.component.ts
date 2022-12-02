@@ -38,7 +38,8 @@ export class ListComponent implements OnInit {
         },
       })
       .subscribe((res) => {
-        this.response= res
+        this.response= res;
+        window.scrollTo(0, 0)
       });
   }
 }

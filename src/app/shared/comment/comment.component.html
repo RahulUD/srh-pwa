@@ -20,7 +20,7 @@
                 </div>
                 <div class="bg-light p-2">
                     <new-comment *ngIf="user; else clickTologin" [avatar]="user.avatar" (commentSaveClickEvent)="commentHandler($event)"></new-comment>
-                    <ng-template #clickTologin><h6 class="text-danger">login to Like/ Comment on this blog</h6></ng-template>
+                    <ng-template #clickTologin><h6 class="text-danger" [routerLink]="['/user/auth/signin','blogs/blogId/'+blogId]">login to Like/ Comment on this blog</h6></ng-template>
 
                 </div>
                 <div class="bg-white p-2">

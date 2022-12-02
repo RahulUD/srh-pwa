@@ -40,7 +40,7 @@
           <user-menu></user-menu>
         </div>
         <ng-template #login>
-          <div class="text-light login mt-2 cursor-pointer" data-bs-dismiss="offcanvas" aria-label="Close" routerLink="/user/auth/signin">Login/ Register
+          <div class="text-light login mt-2 cursor-pointer" data-bs-dismiss="offcanvas" aria-label="Close" [routerLink]="['/user/auth/signin','/dashboard']">Login/ Register
           </div>
         </ng-template>
       </div>

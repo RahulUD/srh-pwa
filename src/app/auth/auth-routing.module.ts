@@ -12,7 +12,7 @@ const routes: Routes = [
     path: 'user/auth',
     component: AuthComponent,
     children: [
-      { path: 'signin', component: SigninComponent },
+      { path: 'signin/:redirectUrl', component: SigninComponent },
       { path: 'signup', component: SignupComponent },
       { path: 'forgotpassword', component: ForgotPassComponent },
       { path: 'reset-password/:token', component: ResetpasswordComponent },

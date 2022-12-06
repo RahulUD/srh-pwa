@@ -1,8 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
-
     <app-logo></app-logo>
-
     <button class="navbar-toggler" aria-controls="staticBackdrop" type="button" data-bs-toggle="offcanvas"
       data-bs-target="#offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -17,13 +15,14 @@
       </div>
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" data-bs-dismiss="offcanvas" aria-label="Close">
-          <!-- <li class="nav-item">
-            <a class="nav-link" aria-current="about" routerLink="/welcome/aboutus">About <i class="bi bi-shop-window"></i></a>
-          </li> -->
           <li class="nav-item">
-            <a class="nav-link " routerLink="/welcome/contactus">Contact <i class="bi bi-person-lines-fill"></i></a>
+            <a class="nav-link" aria-current="Syllabus" routerLinkActive="active" routerLink="/syllabus/home">Syllabus
+              <i class="bi bi-journal-text"></i></a>
           </li>
-
+          <li class="nav-item">
+            <a class="nav-link " routerLink="/welcome/contactus" routerLinkActive="active">Contact <i
+                class="bi bi-person-lines-fill"></i></a>
+          </li>
         </ul>
         <div class="dropdown d-none d-lg-block " *ngIf="authService.isLoggedIn$ | async; else login"
           [title]="user?.name">
@@ -36,11 +35,13 @@
             <user-menu></user-menu>
           </div>
         </div>
-        <div class="d-block d-lg-none d-xl-none s-xxl-none"  *ngIf="authService.isLoggedIn$ | async">
+        <div class="d-block d-lg-none d-xl-none s-xxl-none" *ngIf="authService.isLoggedIn$ | async">
           <user-menu></user-menu>
         </div>
         <ng-template #login>
-          <div class="text-light login mt-2 cursor-pointer" data-bs-dismiss="offcanvas" aria-label="Close" [routerLink]="['/user/auth/signin','/dashboard']">Login/ Register
+          <div class=" fw-bold text-warning login mt-2 cursor-pointer" data-bs-dismiss="offcanvas" aria-label="Close"
+            [routerLink]="['/user/auth/signin','/dashboard']">Login/ Register &nbsp;<i
+              class="bi bi-box-arrow-in-left fw-bold"></i>
           </div>
         </ng-template>
       </div>

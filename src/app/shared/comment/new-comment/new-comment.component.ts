@@ -1,8 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { AuthService } from 'src/app/auth/service/auth.service';
-import { CommentService } from 'src/app/service/comment.service';
-import { baseUser } from 'src/types/user';
 
 @Component({
   selector: 'new-comment',

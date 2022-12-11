@@ -5,22 +5,30 @@
                 <div class="bg-white">
                     <div class="cursor d-flex align-items-center flex-row fs-12">
                         <div class="like p-2 ">
-                            <button class="btn btn-light btn-sm" (click)="likeclickHandler()" [disabled]="!user">
+                            <button class="btn btn-light btn-sm" (click)="likeclickHandler()" >
                                 <i class="bi  text-primary fs-5"
                                     [ngClass]=" ifILiked() ? 'bi-hand-thumbs-up-fill' : user ? 'bi-hand-thumbs-up' : 'bi-hand-thumbs-up-fill' ">
                                 </i><span class="ml-1">&nbsp;{{likes?.length ?? 0}}</span>
                             </button>
                         </div>
-                        <div class="like p-2 cursor d-flex align-items-center"><i class="bi bi-chat-left-dots-fill text-primary fs-5"></i><span
-                                class="ml-1">&nbsp; {{comments?.length}}</span>
+                        <div class="like p-2 cursor d-flex align-items-center"><i
+                                class="bi bi-chat-left-dots-fill text-primary fs-5"></i><span class="ml-1">&nbsp;
+                                {{comments?.length}}</span>
                         </div>
-                        <div class="like p-2 cursor d-flex align-items-center"><a class="ml-1" href="https://facebook.com" target="_blank"> <i
-                                    class="bi bi-share-fill text-primary fs-5"></i></a></div>
+                        <!-- <div class="like p-2 cursor d-flex align-items-center"><a class="ml-1"
+                                href="https://facebook.com" target="_blank"> <i
+                                    class="bi bi-share-fill text-primary fs-5"></i></a></div> -->
                     </div>
                 </div>
                 <div class="bg-light p-2">
-                    <new-comment *ngIf="user; else clickTologin" [avatar]="user.avatar" (commentSaveClickEvent)="commentHandler($event)"></new-comment>
-                    <ng-template #clickTologin><h6 class="text-danger cursor-pointer" [routerLink]="['/user/auth/signin','blogs/blogId/'+blogId]">login to Like/ Comment on this blog</h6></ng-template>
+                    <new-comment *ngIf="user" [avatar]="user.avatar"
+                        (commentSaveClickEvent)="commentHandler($event)"></new-comment>
+                    <textarea class="w-100" readonly (click)="loginPrompt()"></textarea>
+                    <!-- <ng-template #clickTologin>
+                        <h6 class="text-danger cursor-pointer"
+                            [routerLink]="['/user/auth/signin','blogs/blogId/'+blogId]">login to Like/ Comment on this
+                            blog</h6>
+                    </ng-template> -->
                 </div>
                 <div class="bg-white p-2">
                     <comment-item *ngFor="let commentItem of comments" [comment]="commentItem"></comment-item>

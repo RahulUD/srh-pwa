@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import * as bootstrap from 'bootstrap';
 import { AuthService } from 'src/app/auth/service/auth.service';
 import { CommentService } from 'src/app/service/comment.service';
 import { LikeService } from 'src/app/service/like.service';
@@ -55,6 +56,8 @@ export class CommentComponent implements OnInit {
             this.likes = res;
           }
         });
+    }else{
+      this.loginPrompt()
     }
   }
   ifILiked() {
@@ -62,5 +65,8 @@ export class CommentComponent implements OnInit {
       return !!this.likes?.filter((like) => (like.user._id == this.user._id))[0];
     }
     return false;
+  }
+  loginPrompt(){
+    new bootstrap.Modal('#login-prompt').show()
   }
 }

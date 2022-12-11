@@ -26,6 +26,7 @@ import { CommentComponent } from './comment/comment.component';
 import { NewCommentComponent } from './comment/new-comment/new-comment.component';
 import { CommentItemComponent } from './comment/comment-item/comment-item.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginPromptComponent } from './login-prompt/login-prompt.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommentComponent,
     NewCommentComponent,
     CommentItemComponent,
+    LoginPromptComponent,
   ],
   imports: [
     CommonModule,
@@ -73,7 +75,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     DragDropFileUploadDirective,
     PaginationComponent,
     CountCardGroupComponent,
-    CommentComponent
+    CommentComponent,
+    LoginPromptComponent
   ]
 })
 export class SharedModule { }

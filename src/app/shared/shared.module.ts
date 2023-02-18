@@ -76,7 +76,8 @@ import { LoginPromptComponent } from './login-prompt/login-prompt.component';
     PaginationComponent,
     CountCardGroupComponent,
     CommentComponent,
-    LoginPromptComponent
+    LoginPromptComponent,
+    AvatarComponent
   ]
 })
 export class SharedModule { }

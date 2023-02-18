@@ -1,0 +1,47 @@
+<!-- <div class="box-part  card p-4 m-1">
+  <div class="position-image text-center">
+    <srh-avatar customclass="circle blue-2-border" dimension="100x100"></srh-avatar>
+  </div>
+  <div class="title text-center">
+    <h4>{{sybbalusData.title}}</h4>
+  </div>
+  <a href="#">Learn More</a>
+</div> -->
+
+
+<!-- <div class="col">
+  <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
+    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+      <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
+      <ul class="d-flex list-unstyled mt-auto">
+        <li class="me-auto">
+          <img src="./../../../assets/img/job1.jpg" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+        </li>
+        <li class="d-flex align-items-center me-3">
+          <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+          <small>Earth</small>
+        </li>
+        <li class="d-flex align-items-center">
+          <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+          <small>3d</small>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div> -->
+
+  <div [routerLink]="['/syllabus/details', sybbalusData._id]" class="card card-cover overflow-hidden text-bg-dark  shadow-lg" style="background-image: url('./../../../assets/img/jobs1.gif');">
+    <div class="d-flex flex-column p-3 text-white text-shadow-1">
+      <ul class="d-flex list-unstyled">
+        <li class="me-auto">
+          <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+        </li>
+        <li class="d-flex align-items-center me-3">
+          <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+          <small>last updated 4d ago</small>
+        </li>
+      </ul>
+      <h5 class="">{{sybbalusData.title}}</h5>
+      
+    </div>
+  </div>

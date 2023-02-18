@@ -1,0 +1,32 @@
+<div class="container ">
+    <div class="row">
+        <div class="col-md-9 ">
+            <div>
+                <div class="container py-4">
+                    <div class="bg-light rounded-3">
+                        <!-- <div class="container-fluid p2-5">
+                            <h1 class="display-5 fw-bold">{{syllabus.title}}</h1>
+                            <a href="#" class="col-md-8 fs-5">Official Portal</a>
+                        </div> -->
+                        <div class="d-flex flex-column p-4 text-white text-shadow-1" style="background-image: url('./../../../assets/img/jobs1.gif')">
+                            <ul class="d-flex list-unstyled">
+                              <li class="me-auto">
+                                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                              </li>
+                              <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                                <small>last updated 4d ago</small>
+                              </li>
+                            </ul>
+                            <h1 class="">{{syllabus.title}}</h1>
+                            
+                          </div>
+                    </div>
+                    <markdown [data]="syllabus.markdown" lineNumbers emoji katex clipboard mermaid>
+                    </markdown>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

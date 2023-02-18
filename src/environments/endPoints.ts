@@ -13,5 +13,6 @@ export const generateEndpoints = (baseUrl: string) => {
     like: `${baseUrl}likes/blog`,
     // dislike: `${baseUrl}likes`,
     comment: `${baseUrl}comments/blog`,
+    syllabuses : `${baseUrl}syllabuses`,
   };
 };

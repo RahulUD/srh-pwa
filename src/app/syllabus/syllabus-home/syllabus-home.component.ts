@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { SyllabusService } from 'src/app/service/syllabus.service';
+import { baseSyllabus } from 'src/types/syllabus';
 
 @Component({
   selector: 'app-syllabus-home',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SyllabusHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
+  syllabuses !: any
   ngOnInit(): void {
+    this.activatedRoute.data.subscribe((data: any) => {
+      this.syllabuses = data[0];
+    });
+    console.log(this.syllabuses)
   }
-
 }
